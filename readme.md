@@ -1,6 +1,6 @@
 ## Yogaground example application
 
-This is an example application written in the Laravel 5 framework for a simple yoga site. It is designed to show am example of what Laravel can do.
+This is an example application written in the Laravel 5 framework for a simple yoga site. It is designed to show an example of what Laravel can do.
 
 
 ## Set up
