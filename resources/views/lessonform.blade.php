@@ -1,10 +1,6 @@
-<?php if(!$isFormCorrect && $isSubmit ) : ?>
-<p><strong>Sorry, the form needs correcting</strong><br />
-    <?php foreach($f->getErrorMessages()  as $k=>$v) :?>
-    &middot;<?php echo $v; ?> <br />
-    <?php endforeach; ?>
-</p>
-<?php endif; ?>
+@foreach ($errors->all() as $error)
+    <p class="red">{{ $error }}</p>
+@endforeach
 
 
 <?php if(!$isFormCorrect ) : ?>

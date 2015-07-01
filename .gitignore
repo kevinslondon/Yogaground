@@ -1,3 +1,7 @@
 /vendor
 /node_modules
+/.vagrant
+/.idea
+/public/images/*_notes
+/public/publicity/.Thumbs.db
 .env

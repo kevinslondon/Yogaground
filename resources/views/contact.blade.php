@@ -18,7 +18,6 @@
     @foreach ($errors->all() as $error)
         <p class="red">{{ $error }}</p>
     @endforeach
-    <?php //print_r($errors->getBags()) ; ?>
     <form method="post" >
         <div id="innercol" {!!$errors->first('name') ? 'class="red"' : ''!!}  >
             <strong> Your Name:</strong>      </div>
