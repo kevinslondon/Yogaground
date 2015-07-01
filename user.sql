@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS `yogaground` ;
+GRANT ALL PRIVILEGES ON yogaground.* TO 'test22'@'localhost' IDENTIFIED BY 'pass22' WITH GRANT OPTION;

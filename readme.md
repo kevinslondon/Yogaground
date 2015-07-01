@@ -41,12 +41,6 @@ cd /vagrant
 
 phpunit
 
-If you get an error with PHPUnit complaining that "Maximum function nesting level of '100' reached, aborting!", then go to
-
-sudo nano :/etc/php5/cli/conf.d/20-xdebug.ini and add the line
-
-xdebug.max_nesting_level=200
-
 Then run
 
 sudo service apache2 restart and test again. It should now work

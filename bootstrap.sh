@@ -76,10 +76,7 @@ php5enmod mcrypt
 a2enconf php5-fpm
 service apache2 reload
 
-# php unit
-wget https://phar.phpunit.de/phpunit.phar
-chmod +x phpunit.phar
-mv phpunit.phar /usr/local/bin/phpunit
+
 
 # ---------------------------------------
 #          MySQL Setup
@@ -93,10 +90,7 @@ debconf-set-selections <<< 'mysql-server mysql-server/root_password_again passwo
 apt-get install -y mysql-server mysql-client php5-mysql
 
 # Set up the database
-mysql -uroot -proot <<EOL
-CREATE DATABASE IF NOT EXISTS `yogaground` ;
-GRANT ALL PRIVILEGES ON yogaground.* TO 'test22'@'localhost' IDENTIFIED BY 'pass22' WITH GRANT OPTION;
-EOL
+mysql -uroot -proot < /vagrant/user.sql
 # Import the data
 mysql -uroot -proot yogaground < /vagrant/yogaground.sql
 # ---------------------------------------
@@ -125,6 +119,11 @@ service apache2 restart
 #       Tools Setup
 # ---------------------------------------
 
+# php unit
+wget https://phar.phpunit.de/phpunit.phar
+chmod +x phpunit.phar
+sudo mv phpunit.phar /usr/local/bin/phpunit
+
 # Installing nodejs and npm
 apt-get install -y nodejs
 
@@ -140,8 +139,15 @@ curl -s https://getcomposer.org/installer | php
 # Make Composer available globally
 mv composer.phar /usr/local/bin/composer
 
+cat > /etc/php5/cli/conf.d/20-xdebug.ini << EOF
+xdebug.max_nesting_level=200
+EOF
+
+
 # Install MailHog
  wget https://github.com/mailhog/MailHog/releases/download/v0.1.7/MailHog_linux_386
+ mv MailHog_linux_386 /usr/local/bin/mailhog
+
  sudo tee /etc/init/mailhog.conf <<EOL
  description "Mailhog"
  start on runlevel [2345]
@@ -160,3 +166,5 @@ echo "alias v=\"clear;cd /vagrant\"" >> /home/vagrant/.bashrc
 echo "alias c=\"clear\"" >> /home/vagrant/.bashrc
 echo "alias phpunit=\"clear;php /usr/local/bin/phpunit\"" >> /home/vagrant/.bashrc
 source /home/vagrant/.bashrc
+
+php /vagrant/artisan key:generate
