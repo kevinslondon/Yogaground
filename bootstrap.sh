@@ -87,6 +87,13 @@ debconf-set-selections <<< 'mysql-server mysql-server/root_password_again passwo
 # Installing packages
 apt-get install -y mysql-server mysql-client php5-mysql
 
+# Set up the database
+mysql -uroot -proot <<EOL
+CREATE DATABASE IF NOT EXISTS `yogaground` ;
+GRANT ALL PRIVILEGES ON yogaground.* TO 'test22'@'localhost' IDENTIFIED BY 'pass22' WITH GRANT OPTION;
+EOL
+# Import the data
+mysql -uroot -proot yogaground < /Vagrant/yogaground.sql
 # ---------------------------------------
 #          PHPMyAdmin setup
 # ---------------------------------------
@@ -112,10 +119,6 @@ service apache2 restart
 # ---------------------------------------
 #       Tools Setup
 # ---------------------------------------
-
-# Adding NodeJs PPA Repository
-add-apt-repository -y ppa:chris-lea/node.js
-apt-get update
 
 # Installing nodejs and npm
 apt-get install -y nodejs
