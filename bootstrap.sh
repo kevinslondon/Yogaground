@@ -76,6 +76,11 @@ php5enmod mcrypt
 a2enconf php5-fpm
 service apache2 reload
 
+# php unit
+wget https://phar.phpunit.de/phpunit.phar
+chmod +x phpunit.phar
+mv phpunit.phar /usr/local/bin/phpunit
+
 # ---------------------------------------
 #          MySQL Setup
 # ---------------------------------------
@@ -93,7 +98,7 @@ CREATE DATABASE IF NOT EXISTS `yogaground` ;
 GRANT ALL PRIVILEGES ON yogaground.* TO 'test22'@'localhost' IDENTIFIED BY 'pass22' WITH GRANT OPTION;
 EOL
 # Import the data
-mysql -uroot -proot yogaground < /Vagrant/yogaground.sql
+mysql -uroot -proot yogaground < /vagrant/yogaground.sql
 # ---------------------------------------
 #          PHPMyAdmin setup
 # ---------------------------------------
@@ -146,3 +151,12 @@ mv composer.phar /usr/local/bin/composer
  exec su - vagrant -c "/usr/bin/env ~/mailhog > /dev/null 2>&1 &"
  end script
  EOL
+
+ # add aliases
+echo "alias a=\"clear;php artisan --env=local\"" >> /home/vagrant/.bashrc
+echo "alias am=\"clear;php artisan --env=local migrate\"" >> /home/vagrant/.bashrc
+echo "alias as=\"clear;php artisan --env=local migrate:refresh --seed\"" >> /home/vagrant/.bashrc
+echo "alias v=\"clear;cd /vagrant\"" >> /home/vagrant/.bashrc
+echo "alias c=\"clear\"" >> /home/vagrant/.bashrc
+echo "alias phpunit=\"clear;php /usr/local/bin/phpunit\"" >> /home/vagrant/.bashrc
+source /home/vagrant/.bashrc
