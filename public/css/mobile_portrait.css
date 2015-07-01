@@ -1,0 +1,163 @@
+body {
+    font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+#aboutme {
+    position: absolute;
+    top: 153px;
+    left: 0px;
+}
+
+#lessons {
+    position: absolute;
+    top: 116px;
+    left: 0px;
+}
+
+#header_image {
+    left: -20px;
+    width: 100%;
+    position: relative;
+}
+
+#container {
+    width: 100%;
+    left: 0px;
+    float: left;
+    clear: both;
+}
+
+article#content {
+    top: 0px;
+    width: 95%;
+    float: left;
+    margin: 0px;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-right: 20px;
+}
+
+article#content p {
+    font-size: 1em;
+    line-height: 1.4em;
+}
+
+article#content h1 {
+    color: #406E00;
+    font-size: 1.5em;
+}
+
+aside#side_bar {
+    display: none;
+    float: left;
+    width: 75px;
+    margin: 0px;
+    padding: 0px;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    top: 5px;
+    text-align: right;
+    margin-top: 5px;
+    clear: both;
+    color: #FFFFFF;
+    background-color: #79994D;
+    padding-right: 20px;
+}
+
+
+
+nav#left_bar {
+    float: left;
+    width: 85%;
+    margin: 0px;
+    padding: 0px;
+}
+
+aside#right_bar {
+    float: left;
+    width: 95%;
+    margin: 0px;
+    padding: 0px;
+}
+
+aside#side_bar_right {
+    float: right;
+    width: 76px;
+    display: none;
+}
+
+
+#menu_bottom_separator, #menu_bottom_image {
+    display: none;
+}
+
+h2.menu_link {
+    font-size: 1em;
+    color: #214E85;
+    margin-left: 20px;
+    display: inline;
+}
+
+h2.menu_link a {
+    text-decoration: none;
+    font-size: 1.0em;
+
+}
+
+h2.menu_link a:hover {
+    text-decoration: none;
+}
+
+h2.menu_link a:hover {
+    text-decoration: none;
+}
+
+h2.menu_link_sub {
+    font-size: 0.7em;
+    color: #214E85;
+    margin-left: 30px;
+    line-height: 0.8em;
+
+}
+
+h2.menu_link_sub a {
+    text-decoration: none;
+}
+
+h2.menu_link_sub a:hover {
+    text-decoration: none;
+}
+
+h2.menu_link_sub a:hover {
+    text-decoration: none;
+}
+
+#container_centre {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+}
+
+.red {
+    color: #990000;
+    font-weight: bold;
+}
+
+.image_border {
+    margin-right: 10px;
+    border: 1px solid #333333;
+}
+
+.image_left {
+    border: none;
+    text-align: left;
+}
+
+.mobile_hide {
+    display: none;
+}

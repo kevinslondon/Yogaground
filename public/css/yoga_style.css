@@ -1,0 +1,155 @@
+body {
+    font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+#aboutme {
+    position: absolute;
+    top: 153px;
+    left: 0px;
+}
+
+#lessons {
+    position: absolute;
+    top: 116px;
+    left: 0px;
+}
+
+article#content {
+    top: 0px;
+    width: 465px;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+}
+
+article#content p {
+    font-size: 1em;
+    line-height: 1.4em;
+}
+
+article#content h1 {
+    color: #406E00;
+    font-size: 1.5em;
+}
+
+aside#side_bar {
+    float: left;
+    width: 75px;
+    margin: 0px;
+    padding: 0px;
+}
+
+footer {
+    position: relative;
+    width: 849px;
+    top: 10px;
+    text-align: right;
+    margin-top: 5px;
+    clear: both;
+    color: #FFFFFF;
+    background-color: #79994D;
+    margin-right: 76px;
+    margin-left: 75px;
+}
+
+#container {
+    width: 1000px;
+    left: 0px;
+    float: left;
+    clear: both;
+}
+
+nav#left_bar {
+    float: left;
+    width: 194px;
+    margin: 0px;
+    padding: 0px;
+}
+
+aside#right_bar {
+    float: left;
+    width: 176px;
+    margin: 0px;
+    padding: 0px;
+}
+
+aside#side_bar_right {
+    float: right;
+    width: 76px;
+}
+
+.fb-like-box {
+    margin-left: 5px;
+}
+
+#menu {
+    float: left;
+    margin-left: 10px;
+    width: 150px;
+}
+
+h2.menu_link {
+    font-size: 1em;
+    color: #214E85;
+    margin-left: 20px;
+}
+
+h2.menu_link a {
+    text-decoration: none;
+    font-size: 1.0em;
+}
+
+h2.menu_link a:hover {
+    text-decoration: none;
+}
+
+h2.menu_link a:hover {
+    text-decoration: none;
+}
+
+h2.menu_link_sub {
+    font-size: 0.7em;
+    color: #214E85;
+    margin-left: 30px;
+    line-height: 0.8em;
+
+}
+
+h2.menu_link_sub a {
+    text-decoration: none;
+}
+
+h2.menu_link_sub a:hover {
+    text-decoration: none;
+}
+
+h2.menu_link_sub a:hover {
+    text-decoration: none;
+}
+
+#container_centre {
+    margin-right: auto;
+    margin-left: auto;
+    width: 1000px;
+}
+
+.red {
+    color: #990000;
+    font-weight: bold;
+}
+
+.image_border {
+    margin-right: 10px;
+    border: 1px solid #333333;
+}
+
+.image_left {
+    border: none;
+    text-align: left;
+}
+
+.right_bar_break {
+    display: block;
+}
