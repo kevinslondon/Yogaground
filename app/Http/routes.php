@@ -27,4 +27,12 @@ Route::post('/contact', [
     'as' => 'lessons', 'uses' => 'PageController@processContact'
 ]);
 
+Route::get('/apply/{workshop}', [
+    'as' => 'apply', 'uses' => 'PageController@showApply'
+]);
+
+Route::post('/apply/{workshop}', [
+    'as' => 'apply_process', 'uses' => 'PageController@processApply'
+]);
+
 

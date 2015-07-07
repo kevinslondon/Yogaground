@@ -56,4 +56,14 @@ class FrontEndTest extends TestCase
             ->press('Submit')
             ->see('Thanks for contacting me');
     }
+
+    public function testWorkshop()
+    {
+        $this->visit('/apply/25')
+            ->see('Form for');
+
+        $this->visit('/apply/25')
+            ->press('Submit')
+            ->see('The name field is required');
+    }
 }

@@ -8,6 +8,7 @@ namespace App\Http\Controllers;
 
 
 use App\Events\ContactEvent;
+use App\Events\WorkshopEvent;
 use App\Page;
 use Illuminate\Http\Request;
 use App\Reviews;
@@ -40,7 +41,8 @@ class PageController extends Controller {
         $left_image = $this->getLeftGutterImage();
         $review = $this->getReview();
         $content = $this->page->getPageByUrl($url);
-        return view('page', compact('left_image', 'review','url', 'content'));
+        $include_right = true;
+        return view('page', compact('left_image', 'review','url', 'content','include_right'));
     }
 
 
@@ -53,7 +55,8 @@ class PageController extends Controller {
         $left_image = $this->getLeftGutterImage();
         $review = $this->getReview();
         $reviews = $this->review->all();
-        return view('reviews', compact('left_image', 'review','reviews'));
+        $include_right = true;
+        return view('reviews', compact('left_image', 'review','reviews','include_right'));
     }
 
     /**
@@ -79,11 +82,40 @@ class PageController extends Controller {
 
     }
 
+    /**
+     * Apply for lessons/workshops page
+     * @param $workshop_id int
+     * @return \Illuminate\View\View
+     */
+    public function showApply($workshop_id)
+    {
+        $left_image = $this->getLeftGutterImage();
+        $include_right = false;
+        return view('lessonform', compact('left_image', 'include_right'));
+    }
+
+    public function processApply(Request $request)
+    {
+        $this->validate($request, [
+            'name' =>'required',
+            'email' => 'required|email',
+            'address' => 'required',
+            'phone' => 'required',
+            'age' => 'required'
+        ]);
+
+        Event::fire(new WorkshopEvent($request));
+
+        return $this->getView('apply_done');
+
+    }
+
     private function getView($view_name)
     {
         $left_image = $this->getLeftGutterImage();
         $review = $this->getReview();
-        return view($view_name, compact('left_image', 'review'));
+        $include_right = true;
+        return view($view_name, compact('left_image', 'review','include_right'));
     }
 
     private function getLeftGutterImage() {

@@ -19,13 +19,13 @@
         <p class="red">{{ $error }}</p>
     @endforeach
     <form method="post" >
-        <div id="innercol" {!!$errors->first('name') ? 'class="red"' : ''!!}  >
+        <div id="innercol" {!!error_class('name', $errors) !!}  >
             <strong> Your Name:</strong>      </div>
         <div class="innerblock">
             <input name="name" type="text" id="name" value="{{Input::old('name')}}" size="60" />
         </div>
         <br clear="left" />
-        <div id="innercol" {!!$errors->first('email') ? 'class="red"' : ''!!} >
+        <div id="innercol" {!!error_class('email', $errors) !!} >
             <strong> Email Address:</strong>      </div>
         <div class="innerblock">
             <input name="email" type="text" id="email" value="{{Input::old('email')}}" size="60" />

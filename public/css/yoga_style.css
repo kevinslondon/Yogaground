@@ -80,6 +80,10 @@ aside#side_bar_right {
     width: 76px;
 }
 
+fieldset.apply_form {
+    width: 620px;
+}
+
 .fb-like-box {
     margin-left: 5px;
 }

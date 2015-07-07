@@ -42,10 +42,12 @@ $show_facebook = true;
             @yield('content')
         </article>
 
+        @if($include_right)
         <aside id="right_bar" >
             @include('layouts.right')
         </aside>
         <aside id="side_bar_right"><img src="/images/right_spacer.jpg" alt="" width="76" height="396" /></aside>
+        @endif
 
     </section>
     <br clear="left" />

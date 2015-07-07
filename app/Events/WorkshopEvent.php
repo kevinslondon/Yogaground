@@ -6,7 +6,9 @@ use App\Events\Event;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Http\Request;
-class ContactEvent extends Event
+
+
+class WorkshopEvent extends Event
 {
     use SerializesModels;
 
@@ -39,6 +41,5 @@ class ContactEvent extends Event
     {
         return $this->request;
     }
-
 
 }
