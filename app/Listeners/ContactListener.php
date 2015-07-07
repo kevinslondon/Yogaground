@@ -63,12 +63,13 @@ class ContactListener
         $user = $_ENV['SMS_USER'];
         $pass = $_ENV['SMS_PASS'];
         $sms_phone = $_ENV['SMS_PHONE'];
+        $sms_url = $_ENV['SMS_URL'];
 
         date_default_timezone_set('Europe/London');
         $datetime = new \DateTime();
         $h = $datetime->format('H');
         if ($h < 23 && $h > 7) {
-            $url = "http://www.kapow.co.uk/scripts/sendsms.php";
+            $url = $sms_url;
             $post = array(
                 'username' => $user,
                 'password' => $pass,
