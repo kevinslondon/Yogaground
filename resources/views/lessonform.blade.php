@@ -9,7 +9,7 @@
     </p>
 
 
-    <h1>Form for <?php //echo $workshop['name'] ?> </h1>
+    <h1>Apply for {{$page_workshop->name}} </h1>
     <form id="form1" name="form1" method="post" action="">
         <fieldset class="apply_form" >
             <legend>About You</legend>

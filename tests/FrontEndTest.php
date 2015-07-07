@@ -60,7 +60,7 @@ class FrontEndTest extends TestCase
     public function testWorkshop()
     {
         $this->visit('/apply/25')
-            ->see('Form for');
+            ->see('Apply for');
 
         $this->visit('/apply/25')
             ->press('Submit')

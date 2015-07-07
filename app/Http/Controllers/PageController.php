@@ -10,10 +10,10 @@ namespace App\Http\Controllers;
 use App\Events\ContactEvent;
 use App\Events\WorkshopEvent;
 use App\Page;
+use App\Workshop;
 use Illuminate\Http\Request;
 use App\Reviews;
 use Illuminate\Support\Facades\Event;
-use Illuminate\Support\Facades\Mail;
 
 class PageController extends Controller {
 
@@ -22,12 +22,21 @@ class PageController extends Controller {
      */
     private $page;
 
+    /**
+     * @var Reviews
+     */
     private $review;
 
-    function __construct(Page $page, Reviews $review)
+    /**
+     * @var Workshop
+     */
+    private $workshop;
+
+    function __construct(Page $page, Reviews $review, Workshop $workshop)
     {
         $this->page = $page;
         $this->review = $review;
+        $this->workshop = $workshop;
     }
 
 
@@ -38,11 +47,8 @@ class PageController extends Controller {
      */
     public function showPage($url='home')
     {
-        $left_image = $this->getLeftGutterImage();
-        $review = $this->getReview();
         $content = $this->page->getPageByUrl($url);
-        $include_right = true;
-        return view('page', compact('left_image', 'review','url', 'content','include_right'));
+        return $this->getView('page',['url'=>$url, 'content'=>$content]);
     }
 
 
@@ -52,11 +58,8 @@ class PageController extends Controller {
      */
     public function showReviews()
     {
-        $left_image = $this->getLeftGutterImage();
-        $review = $this->getReview();
         $reviews = $this->review->all();
-        $include_right = true;
-        return view('reviews', compact('left_image', 'review','reviews','include_right'));
+        return $this->getView('page',['reviews'=>$reviews]);
     }
 
     /**
@@ -89,9 +92,11 @@ class PageController extends Controller {
      */
     public function showApply($workshop_id)
     {
-        $left_image = $this->getLeftGutterImage();
         $include_right = false;
-        return view('lessonform', compact('left_image', 'include_right'));
+        $page_workshop = $this->workshop->findOrNew($workshop_id);
+        $left_image = $this->getLeftGutterImage();
+        //$this->getView('lessonform',['include_right'=>$include_right, 'page_workshop'=>$page_workshop]);
+       return view('lessonform',['include_right'=>$include_right, 'page_workshop'=>$page_workshop,'left_image'=>$left_image] );
     }
 
     public function processApply(Request $request)
@@ -106,17 +111,21 @@ class PageController extends Controller {
 
         Event::fire(new WorkshopEvent($request));
 
-        return $this->getView('apply_done');
+        return $this->getView('lessondone');
 
     }
 
-    private function getView($view_name)
+    private function getView($view_name, $extra_arguments=[])
     {
         $left_image = $this->getLeftGutterImage();
         $review = $this->getReview();
-        $include_right = true;
-        return view($view_name, compact('left_image', 'review','include_right'));
+        if(!isset($extra_arguments['include_right'])){
+            $extra_arguments['include_right'] = true;
+        }
+        $page_variables = array_merge(compact('left_image', 'review'), $extra_arguments);
+        return view($view_name,$page_variables );
     }
+
 
     private function getLeftGutterImage() {
         return '/images/left/'.rand(1,5). '.jpg';
