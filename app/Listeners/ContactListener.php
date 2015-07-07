@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\ContactEvent;
+use App\Newsletter;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Contracts\Mail\Mailer;
@@ -28,6 +29,14 @@ class ContactListener
         $email = $event->getRequest()->get('email');
         $phone = $event->getRequest()->get('phone');
         $comments = $event->getRequest()->get('comments');
+        $newsletter = $event->getRequest()->get('newsletter');
+
+        //Add contact to wordpress newsletter
+        if($newsletter == 'newsletter'){
+            $newsletter_class =  Newsletter::create($event->getRequest()->all());
+            $newsletter_class->status = 'C';
+            $newsletter_class->save();
+        }
 
         $this->mailer->send('emails.contact', compact('name'), function ($message) use ($email, $name) {
             $message->to($email, $name);

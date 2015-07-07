@@ -59,7 +59,7 @@ class PageController extends Controller {
     public function showReviews()
     {
         $reviews = $this->review->all();
-        return $this->getView('page',['reviews'=>$reviews]);
+        return $this->getView('reviews',['reviews'=>$reviews]);
     }
 
     /**

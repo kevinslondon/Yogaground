@@ -53,6 +53,7 @@ class FrontEndTest extends TestCase
             ->type('Taylor', 'name')
             ->type('t@t.com', 'email')
             ->type('unit test', 'comments')
+            ->type('newsletter', 'newsletter')
             ->press('Submit')
             ->see('Thanks for contacting me');
     }
