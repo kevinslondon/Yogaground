@@ -49,6 +49,7 @@ class FrontEndTest extends TestCase
             ->press('Submit')
             ->see('The name field is required');
 
+        $this->expectsEvents(App\Events\ContactEvent::class);
         $this->visit('/contact')
             ->type('Taylor', 'name')
             ->type('t@t.com', 'email')
@@ -56,6 +57,7 @@ class FrontEndTest extends TestCase
             ->type('newsletter', 'newsletter')
             ->press('Submit')
             ->see('Thanks for contacting me');
+
     }
 
     public function testWorkshop()
@@ -67,4 +69,8 @@ class FrontEndTest extends TestCase
             ->press('Submit')
             ->see('The name field is required');
     }
+
+
+
+
 }

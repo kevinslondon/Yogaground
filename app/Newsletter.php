@@ -18,7 +18,7 @@ class Newsletter extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','email','phone'];
+    protected $fillable = ['name', 'email', 'phone'];
 
     /**
      * Indicates if the model should be timestamped.
@@ -26,4 +26,11 @@ class Newsletter extends Model
      * @var bool
      */
     public $timestamps = false;
+
+    public function getByEmail($email)
+    {
+        return $this
+            ->where('email', $email)
+            ->get();
+    }
 }
