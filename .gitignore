@@ -5,3 +5,4 @@
 /public/images/*_notes
 /public/publicity/.Thumbs.db
 .env
+composer.lock
