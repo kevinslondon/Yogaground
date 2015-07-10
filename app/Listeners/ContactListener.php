@@ -4,12 +4,13 @@ namespace App\Listeners;
 
 use App\Events\ContactEvent;
 use App\Newsletter;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Contracts\Mail\Mailer;
 
 class ContactListener
 {
+    /**
+     * @var Mailer
+     */
     private $mailer;
 
     public function __construct(Mailer $mailer)

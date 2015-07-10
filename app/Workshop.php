@@ -12,4 +12,9 @@ class Workshop extends Model
      * @var string
      */
     protected $table = 'mysite_workshop';
+
+    public function getWorkshopDate()
+    {
+        return date('l jS M Y \a\t H:i',strtotime($this->workshop_date));
+    }
 }

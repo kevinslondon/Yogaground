@@ -1,7 +1,3 @@
-<?php
-$show_right_portrait = true;
-$show_facebook = true;
-?>
 <!DOCTYPE html>
 <html>
 <head>

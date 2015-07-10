@@ -27,6 +27,11 @@ class Newsletter extends Model
      */
     public $timestamps = false;
 
+    public function workshops()
+    {
+        return $this->belongsToMany('App\Workshop','mysite_class_attedance','uid','wid');
+    }
+
     public function getByEmail($email)
     {
         return $this

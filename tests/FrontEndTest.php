@@ -68,6 +68,15 @@ class FrontEndTest extends TestCase
         $this->visit('/apply/25')
             ->press('Submit')
             ->see('The name field is required');
+
+        $this->visit('/apply/25')
+            ->type('Taylor', 'name')
+            ->type('t@t.com', 'email')
+            ->type('67', 'age')
+            ->type('the address', 'address')
+            ->type('123456789', 'phone')
+            ->press('Submit')
+            ->see('Thanks for filling in the form');
     }
 
 

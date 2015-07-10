@@ -99,7 +99,12 @@ class PageController extends Controller {
        return view('lessonform',['include_right'=>$include_right, 'page_workshop'=>$page_workshop,'left_image'=>$left_image] );
     }
 
-    public function processApply(Request $request)
+    /**
+     * @param $workshop_id int
+     * @param Request $request
+     * @return \Illuminate\View\View
+     */
+    public function processApply($workshop_id,Request $request)
     {
         $this->validate($request, [
             'name' =>'required',
@@ -109,9 +114,11 @@ class PageController extends Controller {
             'age' => 'required'
         ]);
 
-        Event::fire(new WorkshopEvent($request));
+        $workshop = Workshop::findOrNew($workshop_id);
 
-        return $this->getView('lessondone');
+        Event::fire(new WorkshopEvent($request,$workshop ));
+
+        return $this->getView('lessondone',['workshop'=>$workshop]);
 
     }
 
