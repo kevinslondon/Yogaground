@@ -147,14 +147,17 @@ class PageController extends Controller {
         ]);
 
         $page_workshop = Workshop::findOrNew($workshop_id);
-        $student = $this->student->getByEmail($request->get('email'));
+
 
         if($this->student->isRegistered($request->get('name'),$request->get('email'),$workshop_id)){
+            $student_class = $this->student->getByEmail($request->get('email'));
+            $student = isset($student_class->name) ? $student_class->name : '';
             return $this->getView('lessonregistered',compact('page_workshop','student'));
         }
 
         Event::fire(new WorkshopEvent($request,$page_workshop ));
-        $student = $this->student->getByEmail($request->get('email'));
+        $student_class = $this->student->getByEmail($request->get('email'));
+        $student = isset($student_class->name) ? $student_class->name : '';
 
         return $this->getView('lessondone',compact('page_workshop','student'));
 
