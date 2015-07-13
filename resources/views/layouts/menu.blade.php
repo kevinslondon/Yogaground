@@ -6,4 +6,6 @@
 <h2 class="menu_link"><a href="/contact" title="Contact Yoga Ground">Contact Yoga Ground</a></h2>
 <h2 class="menu_link"><a href="/reviews" title="Testimonials / Reviews">Testimonials</a></h2>
 <h2 class="menu_link"><a href="/blog/" title="Yoga Ground Blog">Blog</a></h2>
-<?php //echo ContentClass::getBlogSubMenu() ?>
+@foreach($blog_menu as $blog)
+    <h2 class="menu_link_sub"><a href="{{$blog->guid}}">{{$blog->post_title}}</a></h2>
+@endforeach

@@ -7,6 +7,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Blog;
 use App\Events\ContactEvent;
 use App\Events\WorkshopEvent;
 use App\Page;
@@ -32,11 +33,24 @@ class PageController extends Controller {
      */
     private $workshop;
 
-    function __construct(Page $page, Reviews $review, Workshop $workshop)
+    /**
+     * @var Blog
+     */
+    private $blog;
+
+    /**
+     * PageController constructor.
+     * @param Page $page
+     * @param Reviews $review
+     * @param Workshop $workshop
+     * @param Blog $blog
+     */
+    public function __construct(Page $page, Reviews $review, Workshop $workshop, Blog $blog)
     {
         $this->page = $page;
         $this->review = $review;
         $this->workshop = $workshop;
+        $this->blog = $blog;
     }
 
 
@@ -126,10 +140,11 @@ class PageController extends Controller {
     {
         $left_image = $this->getLeftGutterImage();
         $review = $this->getReview();
+        $blog_menu = $this->blog->getBlogMenu();
         if(!isset($extra_arguments['include_right'])){
             $extra_arguments['include_right'] = true;
         }
-        $page_variables = array_merge(compact('left_image', 'review'), $extra_arguments);
+        $page_variables = array_merge(compact('left_image', 'review','blog_menu'), $extra_arguments);
         return view($view_name,$page_variables );
     }
 
