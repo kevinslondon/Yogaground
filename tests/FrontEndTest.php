@@ -83,6 +83,12 @@ class FrontEndTest extends TestCase
             ->see('Thanks for filling in the form');
     }
 
+    public function testPay()
+    {
+        $this->visit('/pay/15')
+            ->see('Thanks for filling in the form');
+    }
+
 
 
 
