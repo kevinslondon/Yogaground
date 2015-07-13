@@ -89,6 +89,12 @@ class FrontEndTest extends TestCase
             ->see('Thanks for filling in the form');
     }
 
+    public function test404()
+    {
+        $this->get('/werwerew')
+            ->assertResponseStatus(404);
+    }
+
 
 
 
