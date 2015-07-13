@@ -3,7 +3,7 @@
 namespace App\Events;
 
 use App\Events\Event;
-use App\Newsletter;
+use App\Student;
 use App\Workshop;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;

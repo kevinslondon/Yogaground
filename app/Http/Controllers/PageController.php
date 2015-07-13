@@ -11,6 +11,7 @@ use App\Blog;
 use App\Events\ContactEvent;
 use App\Events\WorkshopEvent;
 use App\Page;
+use App\Student;
 use App\Workshop;
 use Illuminate\Http\Request;
 use App\Reviews;
@@ -39,18 +40,25 @@ class PageController extends Controller {
     private $blog;
 
     /**
+     * @var Student
+     */
+    private $student;
+
+    /**
      * PageController constructor.
      * @param Page $page
      * @param Reviews $review
      * @param Workshop $workshop
      * @param Blog $blog
+     * @param Student $student
      */
-    public function __construct(Page $page, Reviews $review, Workshop $workshop, Blog $blog)
+    public function __construct(Page $page, Reviews $review, Workshop $workshop, Blog $blog, Student $student)
     {
         $this->page = $page;
         $this->review = $review;
         $this->workshop = $workshop;
         $this->blog = $blog;
+        $this->student = $student;
     }
 
 
@@ -108,6 +116,16 @@ class PageController extends Controller {
     {
         $include_right = false;
         $page_workshop = $this->workshop->findOrNew($workshop_id);
+        //Check if the workshop is already full
+        if($page_workshop->isFull()){
+            return $this->getView('lessonfull',['page_workshop'=>$page_workshop]);
+        }
+
+        //Check if the workshop is still current
+        if(date('U') > strtotime($page_workshop->workshop_date)){
+            return $this->getView('lessonexpired',['page_workshop'=>$page_workshop]);
+        }
+
         $left_image = $this->getLeftGutterImage();
         $blog_menu = $this->blog->getBlogMenu();
        return view('lessonform',['include_right'=>$include_right, 'page_workshop'=>$page_workshop,'left_image'=>$left_image,'blog_menu'=>$blog_menu] );
@@ -129,6 +147,10 @@ class PageController extends Controller {
         ]);
 
         $workshop = Workshop::findOrNew($workshop_id);
+        if($this->student->isRegistered($request->get('name'),$request->get('email'),$workshop_id)){
+            $student = $this->student->getByEmail($request->get('email'));
+            return $this->getView('lessonregistered',['page_workshop'=>$workshop,'student'=>$student]);
+        }
 
         Event::fire(new WorkshopEvent($request,$workshop ));
 

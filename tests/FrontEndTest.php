@@ -62,6 +62,9 @@ class FrontEndTest extends TestCase
 
     public function testWorkshop()
     {
+        $this->visit('/apply/15')
+            ->see('Sorry, there are no more spaces');
+
         $this->visit('/apply/25')
             ->see('Apply for');
 

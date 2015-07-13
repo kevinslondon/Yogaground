@@ -3,7 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\WorkshopEvent;
-use App\Newsletter;
+use App\Student;
 use Illuminate\Contracts\Mail\Mailer;
 use App\SmsTrait;
 
@@ -32,7 +32,7 @@ class WorkshopListener
     public function handle(WorkshopEvent $event)
     {
         $request = $event->getRequest()->all();
-        $user = new Newsletter();
+        $user = new Student();
         $workshop = $event->getWorkshop();
         $user->fill($request);
         $user->status = 'C';

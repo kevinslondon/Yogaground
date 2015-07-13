@@ -3,7 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\ContactEvent;
-use App\Newsletter;
+use App\Student;
 use Illuminate\Contracts\Mail\Mailer;
 use App\SmsTrait;
 
@@ -36,7 +36,7 @@ class ContactListener
 
         //Add contact to wordpress newsletter
         if($newsletter == 'newsletter'){
-            $newsletter_class =  Newsletter::create($event->getRequest()->all());
+            $newsletter_class =  Student::create($event->getRequest()->all());
             $newsletter_class->status = 'C';
             $newsletter_class->save();
         }
