@@ -110,7 +110,6 @@ class PageController extends Controller {
         $page_workshop = $this->workshop->findOrNew($workshop_id);
         $left_image = $this->getLeftGutterImage();
         $blog_menu = $this->blog->getBlogMenu();
-        //$this->getView('lessonform',['include_right'=>$include_right, 'page_workshop'=>$page_workshop]);
        return view('lessonform',['include_right'=>$include_right, 'page_workshop'=>$page_workshop,'left_image'=>$left_image,'blog_menu'=>$blog_menu] );
     }
 
