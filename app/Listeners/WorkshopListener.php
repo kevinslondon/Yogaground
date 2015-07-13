@@ -4,14 +4,15 @@ namespace App\Listeners;
 
 use App\Events\WorkshopEvent;
 use App\Newsletter;
-use App\Workshop;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Contracts\Mail\Mailer;
+use App\SmsTrait;
+
 
 
 class WorkshopListener
 {
+    use SmsTrait;
+
     /**
      * @var Mailer
      */
@@ -35,6 +36,7 @@ class WorkshopListener
         $workshop = $event->getWorkshop();
         $user->fill($request);
         $user->status = 'C';
+        $user->profile = $this->getProfile($request);
         $user->save();
 
         $user->workshops()->attach($workshop->id, ['sign_date'=>date('Y-m-d H:i:s')]);
@@ -54,5 +56,16 @@ class WorkshopListener
                 $message->to('kevin@yogaground', 'Yogaground')
                     ->subject('Lesson signup from yogaground');
             });
+
+        $this->sms($name, $request['phone'], 'Lesson sign up '.$this->getProfile($request));
+    }
+
+    private function getProfile($request)
+    {
+        $profile = '';
+        foreach($request as $name=>$field){
+            $profile .= $name. ': '.$field.PHP_EOL;
+        }
+        return $profile;
     }
 }

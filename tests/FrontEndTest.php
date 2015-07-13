@@ -69,6 +69,7 @@ class FrontEndTest extends TestCase
             ->press('Submit')
             ->see('The name field is required');
 
+        $this->expectsEvents(App\Events\WorkshopEvent::class);
         $this->visit('/apply/25')
             ->type('Taylor', 'name')
             ->type('t@t.com', 'email')
