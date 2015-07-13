@@ -146,16 +146,30 @@ class PageController extends Controller {
             'age' => 'required'
         ]);
 
-        $workshop = Workshop::findOrNew($workshop_id);
+        $page_workshop = Workshop::findOrNew($workshop_id);
+        $student = $this->student->getByEmail($request->get('email'));
+
         if($this->student->isRegistered($request->get('name'),$request->get('email'),$workshop_id)){
-            $student = $this->student->getByEmail($request->get('email'));
-            return $this->getView('lessonregistered',['page_workshop'=>$workshop,'student'=>$student]);
+            return $this->getView('lessonregistered',compact('page_workshop','student'));
         }
 
-        Event::fire(new WorkshopEvent($request,$workshop ));
+        Event::fire(new WorkshopEvent($request,$page_workshop ));
+        $student = $this->student->getByEmail($request->get('email'));
 
-        return $this->getView('lessondone',['workshop'=>$workshop]);
+        return $this->getView('lessondone',compact('page_workshop','student'));
 
+    }
+
+    /**
+     * Apply for lessons/workshops page
+     * @param $workshop_id int
+     * @return \Illuminate\View\View
+     */
+    public function showPay($workshop_id)
+    {
+        $include_right = false;
+        $page_workshop = $this->workshop->findOrNew($workshop_id);
+        return $this->getView('lessonpay',compact('page_workshop','include_right'));
     }
 
     private function getView($view_name, $extra_arguments=[])

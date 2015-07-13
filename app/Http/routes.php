@@ -35,4 +35,8 @@ Route::post('/apply/{workshop}', [
     'as' => 'apply_process', 'uses' => 'PageController@processApply'
 ]);
 
+Route::get('/pay/{workshop}', [
+    'as' => 'pay', 'uses' => 'PageController@showPay'
+]);
+
 
