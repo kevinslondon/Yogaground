@@ -28,15 +28,32 @@ Route::post('/contact', [
 ]);
 
 Route::get('/apply/{workshop}', [
-    'as' => 'apply', 'uses' => 'PageController@showApply'
+    'as' => 'apply', 'uses' => 'WorkshopController@showApply'
 ]);
 
 Route::post('/apply/{workshop}', [
-    'as' => 'apply_process', 'uses' => 'PageController@processApply'
+    'as' => 'apply_process', 'uses' => 'WorkshopController@processApply'
 ]);
 
 Route::get('/pay/{workshop}', [
-    'as' => 'pay', 'uses' => 'PageController@showPay'
+    'as' => 'pay', 'uses' => 'WorkshopController@showPay'
 ]);
+
+
+Route::get('/workshop_admin','WorkshopController@getWorkshops');
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
+
+// Password reset link request routes...
+Route::get('password/email', 'Auth\PasswordController@getEmail');
+Route::post('password/email', 'Auth\PasswordController@postEmail');
+
+// Password reset routes...
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');
+
 
 
