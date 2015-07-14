@@ -27,7 +27,6 @@ class PageController extends Controller {
      */
     protected $review;
 
-
     /**
      * @var Blog
      */
@@ -90,7 +89,6 @@ class PageController extends Controller {
         Event::fire(new ContactEvent($request));
 
         return $this->getView('contact_done');
-
     }
 
 
