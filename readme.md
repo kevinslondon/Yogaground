@@ -47,6 +47,9 @@ sudo service apache2 restart and test again. It should now work
 http://localhost:8080
 and run the application
 
+The admin user is test@testing.com and password is testingt123
+http://localhost:8080/auth/login
+
 ### License
 
 The yogaground application is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
