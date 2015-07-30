@@ -72,14 +72,30 @@ CREATE TABLE IF NOT EXISTS `mysite_testimonials` (
 --
 
 INSERT INTO `mysite_testimonials` (`id`, `person_name`, `testimonial_date`, `testimonial_text`) VALUES
-(1, 'Susannah', '2012-02-26', 'The classes have helped me learn to cut off from my everyday life and go within which has been very stress relieving'),
-(2, 'Jo', '2012-02-26', 'I find Kevin''s class very beneficial on a physical and mental level. Since starting the class I have noticed a calmness in my personality and an increase in my strength and posture'),
-(3, 'James', '2011-11-11', 'A really enjoyable, relaxing and focussed course. A little haven from the everyday rush'),
-(4, 'Clare', '2010-08-18', 'Best yoga class I''ve done - and I''ve tried a few. Got much more out of this class. The small group size means more focus on getting body position right. I''d had neutral wrong for years! Now I feel much more aligned. Thanks!'),
-(5, 'Rowan', '2012-06-05', 'I feel I''ve found someone who can teach me ''real'' yoga'),
-(6, 'Lorraine', '2013-05-01', 'I felt the class to be very informative and being a complete beginner, at a pace which I fully understood'),
-(7, 'Maura', '2013-05-01', 'I have more awareness of my posture and with slight adjustments I can immediately feel more grounded and centred in my body'),
-(8, 'Milena', '2014-06-12', 'This course really helped me understand my body and my breathing. I feel more relaxed in general, not just after each class. Learning how to focus in my breathing has been very useful in stressful siutations, and I learned that here. Thank you!');
+(1, 'Test 1', '2012-02-26', 'The classes have helped me learn to cut off from my everyday life and go within which has been very stress relieving'),
+(2, 'Test 2', '2011-11-11', 'A really enjoyable, relaxing and focussed course. A little haven from the everyday rush'),
+(3, 'Test 3', '2014-06-12', 'This course really helped me understand my body and my breathing. I feel more relaxed in general, not just after each class. Learning how to focus in my breathing has been very useful in stressful siutations, and I learned that here. Thank you!');
+
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(10) unsigned NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `users`
+--
+-- Password for this user is testingt123
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+  (1, 'Admin Test', 'test@testing.com', '$2a$04$RI4kuK6xXBBc4HGncYQpheuoOagA1JLNcOFZvvTrtD3x6le2dJYpO', '', '2015-07-13 21:12:54', '2015-07-30 17:01:41');
+
+
+
 SET FOREIGN_KEY_CHECKS=1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
