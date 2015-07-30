@@ -17,6 +17,12 @@ class Workshop extends Model
         return $this->belongsToMany('App\Student','mysite_class_attedance','wid','uid');
     }
 
+    public function getAllWorkshops()
+    {
+        return $this->orderBy('workshop_date','DESC')
+            ->get();
+    }
+
     /**
      * Gets the workshop date formatted as Thursday 29th Oct 2015 at 19:30
      * @return string

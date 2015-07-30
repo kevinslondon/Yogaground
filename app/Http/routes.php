@@ -40,7 +40,8 @@ Route::get('/pay/{workshop}', [
 ]);
 
 
-Route::get('/workshop_admin','WorkshopController@getWorkshops');
+Route::get('/admin/workshop_admin',['middleware' => 'auth',
+    'uses' => 'Auth\Workshops@getWorkshops']);
 
 Route::controllers([
     'auth' => 'Auth\AuthController',

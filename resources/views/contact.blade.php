@@ -24,7 +24,7 @@
         'name', $errors) !!} >
         <strong> Your Name:</strong>      </div>
         <div class="innerblock">
-            <input name="name" type="text" id="name" value="{{Input::old('name')}}" size="60"/>
+            <input name="name" type="text" id="name" value="{{old('name')}}" size="60"/>
         </div>
         <br clear="left"/>
 
@@ -32,14 +32,14 @@
         'email', $errors) !!} >
         <strong> Email Address:</strong>      </div>
         <div class="innerblock">
-            <input name="email" type="text" id="email" value="{{Input::old('email')}}" size="60"/>
+            <input name="email" type="text" id="email" value="{{old('email')}}" size="60"/>
         </div>
         <br clear="left"/>
 
         <div id="innercol">
             <strong>Phone Number:</strong></div>
         <div class="innerblock">
-            <input name="phone" type="text" id="phone" value="{{Input::old('phone')}}" size="60"/>
+            <input name="phone" type="text" id="phone" value="{{old('phone')}}" size="60"/>
         </div>
         <br clear="left"/>
 
@@ -48,7 +48,7 @@
         <br clear="left"/>
 
         <div id="innerblock">
-            <textarea name="comments" cols="45" rows="9">{{Input::old('comments')}}</textarea>
+            <textarea name="comments" cols="45" rows="9">{{old('comments')}}</textarea>
         </div>
         <br clear="left"/>
 

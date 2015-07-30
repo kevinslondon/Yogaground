@@ -157,3 +157,15 @@ h2.menu_link_sub a:hover {
 .right_bar_break {
     display: block;
 }
+
+/**
+* Admin classes
+*/
+.admin_header {
+    padding-left: 80px;
+    padding-top:30px;
+    height: 50px;
+    background: #406E00;
+    color: #FFFFFF;
+    font-size: 20px;
+}

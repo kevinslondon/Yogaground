@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Kevin
- * Date: 13/07/2015
- * Time: 19:25
+ * Blog model, takes a few items from the wordpress site database
  */
 
 namespace app;

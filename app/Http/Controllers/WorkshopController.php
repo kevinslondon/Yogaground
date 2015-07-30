@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Kevin
- * Date: 14/07/2015
- * Time: 16:47
+* Workshop controller for applying and handling workshops
  */
 
 namespace app\Http\Controllers;
@@ -124,12 +121,6 @@ class WorkshopController  extends Controller
         return $this->getView('lessonpay',compact('page_workshop','include_right'));
     }
 
-    public function getWorkshops()
-    {
-        $workshops = $this->workshop->all();
-        //print_r($workshops);
-        return view('auth.workshops',['workshops'=>$workshops]);
-    }
 
     private function getView($view_name, $extra_arguments=[])
     {

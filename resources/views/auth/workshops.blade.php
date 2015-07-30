@@ -3,13 +3,14 @@
 
 @section('content')
 
-    <h1>Admin Home</h1>
+    <h1>Workshop List</h1>
 
     @foreach($workshops as $workshop)
-    <p>{{$workshop->name}}</p>
+    <h2>{{$workshop->name}}</h2>
         @foreach($workshop->students as $student)
             {{$student->name}}<br />
             @endforeach
+        <hr />
     @endforeach
 
 @endsection

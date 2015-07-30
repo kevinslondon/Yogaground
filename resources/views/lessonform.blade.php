@@ -17,28 +17,28 @@
                 <tr>
                     <td valign="top" {!!error_class(
                     'name', $errors) !!} >Name</td>
-                    <td><input name="name" type="text" size="70" value="{{Input::old('name')}}"/></td>
+                    <td><input name="name" type="text" size="70" value="{{old('name')}}"/></td>
                 </tr>
                 <tr>
                     <td valign="top" {!!error_class(
                     'email', $errors) !!} >Email</td>
-                    <td><input name="email" type="text" size="70" value="{{Input::old('email')}}"/></td>
+                    <td><input name="email" type="text" size="70" value="{{old('email')}}"/></td>
                 </tr>
                 <tr>
                     <td valign="top" {!!error_class(
                     'address', $errors) !!} >Address</td>
-                    <td><textarea name="address" cols="65" rows="3">{{Input::old('address')}}</textarea></td>
+                    <td><textarea name="address" cols="65" rows="3">{{old('address')}}</textarea></td>
                 </tr>
                 <tr>
                     <td valign="top" {!!error_class(
                     'phone', $errors) !!}>Phone</td>
-                    <td><input name="phone" type="text" size="30" value="{{Input::old('phone')}}"/></td>
+                    <td><input name="phone" type="text" size="30" value="{{old('phone')}}"/></td>
                 </tr>
                 <tr>
                     <td valign="top" {!!error_class(
                     'age', $errors) !!} >Age</td>
                     <td><label>
-                            <input type="text" name="age" value="{{Input::old('age')}}"/>
+                            <input type="text" name="age" value="{{old('age')}}"/>
                         </label></td>
                 </tr>
             </table>
@@ -62,7 +62,7 @@
                         <br>
                         <label></label></td>
                     <td valign="top"><textarea name="medical_details" cols="30" rows="4"
-                                               id="medical_details">{{Input::old('medical_details')}}</textarea></td>
+                                               id="medical_details">{{old('medical_details')}}</textarea></td>
                 </tr>
                 <tr>
                     <td valign="top" {!!error_class(
@@ -77,7 +77,7 @@
                         <br>
                         <label></label></td>
                     <td valign="top"><textarea name="surgery_details" cols="30" rows="4"
-                                               id="surgery_details">{{Input::old('surgery_details')}}</textarea></td>
+                                               id="surgery_details">{{old('surgery_details')}}</textarea></td>
                 </tr>
                 <tr>
                     <td valign="top" {!!error_class(
@@ -92,7 +92,7 @@
                         <br>
                         <label></label></td>
                     <td valign="top"><textarea name="injury_details" cols="30" rows="4"
-                                               id="injury_details">{{Input::old('injury_details')}}</textarea></td>
+                                               id="injury_details">{{old('injury_details')}}</textarea></td>
                 </tr>
                 <tr>
                     <td valign="top">Have you practised yoga before?</td>
@@ -108,7 +108,7 @@
                         <br>
                         <label></label></td>
                     <td valign="top"><textarea name="practiced_details" cols="30" rows="4"
-                                               id="practiced_details">{{Input::old('practiced_details')}}</textarea>
+                                               id="practiced_details">{{old('practiced_details')}}</textarea>
                     </td>
                 </tr>
                 <tr>
@@ -125,7 +125,7 @@
                         <br>
                         <label></label></td>
                     <td valign="top"><textarea name="adjust_details" cols="30" rows="4"
-                                               id="adjust_details">{{Input::old('adjust_details')}}</textarea></td>
+                                               id="adjust_details">{{old('adjust_details')}}</textarea></td>
                 </tr>
                 <tr>
                     <td valign="top">Is there anything else I should know, that may affect your yoga practice?</td>
@@ -141,7 +141,7 @@
                         <br>
                         <label></label></td>
                     <td valign="top"><textarea name="anything_else_details" cols="30" rows="4"
-                                               id="anything_else_details">{{Input::old('adjust_details')}}</textarea>
+                                               id="anything_else_details">{{old('adjust_details')}}</textarea>
                     </td>
                 </tr>
             </table>
@@ -195,7 +195,7 @@
                     <td valign="top">&nbsp;</td>
                     <td><label>
                             <textarea name="other_reason_details" cols="55"
-                                      rows="5">{{Input::old('other_reason_details')}}</textarea>
+                                      rows="5">{{old('other_reason_details')}}</textarea>
                         </label></td>
                 </tr>
                 <tr>
