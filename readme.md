@@ -1,7 +1,6 @@
 ## Yogaground example application
 
-This is an example application written in the Laravel 5 framework for a simple yoga site. It is designed to show an example of what Laravel can do.
-
+This is an example application written in the Laravel 5 framework for a simple yoga site. It is designed to demonstrate some example Laravel code .
 
 ## Set up
 
@@ -31,9 +30,9 @@ DB_HOST=localhost
 
 DB_DATABASE=yogaground
 
-DB_USERNAME=test22
+DB_USERNAME=testing_yoga
 
-DB_PASSWORD=pass22
+DB_PASSWORD=yoga$pass
 
 Then check the unit tests are running OK
 
