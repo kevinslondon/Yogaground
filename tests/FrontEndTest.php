@@ -21,11 +21,11 @@ class FrontEndTest extends TestCase
     {
         $this->visit('/')
             ->click('About Yoga Ground')
-            ->see('About Kevin Saunders');
+            ->see('About');
 
         $this->visit('/')
             ->click('Lessons')
-            ->see('I run regular yoga classes on');
+            ->see('Lessons');
 
         $this->visit('/')
             ->click('Workshops')
@@ -33,7 +33,7 @@ class FrontEndTest extends TestCase
 
         $this->visit('/')
             ->click('Testimonials')
-            ->see('Lorraine');
+            ->see('The classes');
 
         $this->visit('/')
             ->click('One to ones')
@@ -65,15 +65,15 @@ class FrontEndTest extends TestCase
         $this->visit('/apply/15')
             ->see('Sorry, there are no more spaces');
 
-        $this->visit('/apply/25')
+        $this->visit('/apply/1')
             ->see('Apply for');
 
-        $this->visit('/apply/25')
+        $this->visit('/apply/1')
             ->press('Submit')
             ->see('The name field is required');
 
         $this->expectsEvents(App\Events\WorkshopEvent::class);
-        $this->visit('/apply/25')
+        $this->visit('/apply/1')
             ->type('Taylor', 'name')
             ->type('t@t.com', 'email')
             ->type('67', 'age')
@@ -85,15 +85,10 @@ class FrontEndTest extends TestCase
 
     public function testPay()
     {
-        $this->visit('/pay/15')
+        $this->visit('/pay/1')
             ->see('Thanks for filling in the form');
     }
 
-    public function testViewWorkshopList()
-    {
-        $this->visit('/workshop_admin')
-            ->see('Admin Home');
-    }
 
     public function test404()
     {
