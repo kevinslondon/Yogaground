@@ -10,7 +10,7 @@ vagrant up
 
 This should provision a Ubuntu 14 virtual server.
 
-After the vagrant build is completed, log into the console and run
+After the vagrant build is completed, log into the console (vagrant ssh) and run
  composer update
 
 
