@@ -168,3 +168,5 @@ echo "alias phpunit=\"clear;php /usr/local/bin/phpunit\"" >> /home/vagrant/.bash
 source /home/vagrant/.bashrc
 
 php /vagrant/artisan key:generate
+
+mv /vagrant/.env_example .env
