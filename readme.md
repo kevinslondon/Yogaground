@@ -21,6 +21,8 @@ php artisan key:generate
 Now update the .env file with the new key
 nano /vagrant/.env
 
+Make sure that /vagrant/storage/ is writable
+
 Then check the unit tests are running OK
 
 cd /vagrant
