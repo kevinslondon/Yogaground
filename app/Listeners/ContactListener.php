@@ -2,6 +2,7 @@
 
 namespace App\Listeners;
 
+use app\EmailsReceived;
 use App\Events\ContactEvent;
 use App\Student;
 use Illuminate\Contracts\Mail\Mailer;
@@ -40,6 +41,11 @@ class ContactListener
             $newsletter_class->status = 'C';
             $newsletter_class->save();
         }
+
+        $email_received = EmailsReceived::create($event->getRequest()->all());
+        $email_received->edate = date('Y-m-d H:i:s');
+        $email_received->sms_sent = true;
+        $email_received->save();
 
         $this->mailer->send('emails.contact', compact('name'), function ($message) use ($email, $name) {
             $message->to($email, $name);
