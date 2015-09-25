@@ -7,6 +7,7 @@ use App\Events\ContactEvent;
 use App\Student;
 use Illuminate\Contracts\Mail\Mailer;
 use App\SmsTrait;
+use Illuminate\Support\Facades\Config;
 
 class ContactListener
 {
@@ -48,17 +49,20 @@ class ContactListener
         $email_received->sms_sent = true;
         $email_received->save();*/
 
+        $email_from = env('MAIL_FROM');
+        $email_from_name = env('MAIL_FROM_NAME');
 
-        $this->mailer->send('emails.contact', compact('name'), function ($message) use ($email, $name) {
+
+        $this->mailer->send('emails.contact', compact('name'), function ($message) use ($email, $name,$email_from,$email_from_name) {
             $message->to($email, $name);
-            $message->from('kevin@yogaground', 'Yogaground')
+            $message->from('kevin@yogaground.com', $email_from_name)
                 ->subject('Thanks for contacting Yogaground');
         });
 
         $this->mailer->send('emails.admin_contact', compact('name', 'email', 'phone', 'comments'),
-            function ($message) use ($email, $name) {
+            function ($message) use ($email, $name,$email_from,$email_from_name) {
                 $message->from($email, $name);
-                $message->to('kevin@yogaground', 'Yogaground')
+                $message->to($email_from, $email_from_name)
                     ->subject('Contact from yogaground');
             });
 
