@@ -47,6 +47,7 @@ class ContactListener
         $email_received->sms_sent = true;
         $email_received->save();
 
+
         $this->mailer->send('emails.contact', compact('name'), function ($message) use ($email, $name) {
             $message->to($email, $name);
             $message->from('kevin@yogaground', 'Yogaground')
