@@ -13,10 +13,18 @@ class Workshop extends Model
      */
     protected $table = 'mysite_workshop';
 
+    /**
+     * Get the students for the workshop
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function students(){
         return $this->belongsToMany('App\Student','mysite_class_attedance','wid','uid');
     }
 
+    /**
+     * All workshops
+     * @return mixed
+     */
     public function getAllWorkshops()
     {
         return $this->orderBy('workshop_date','DESC')

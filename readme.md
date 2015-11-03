@@ -10,29 +10,18 @@ vagrant up
 
 This should provision a Ubuntu 14 virtual server.
 
-After the vagrant build is completed, log into the console and run
+After the vagrant build is completed, log into the console (vagrant ssh) and run
  composer update
 
-Update the /vagrant/.env file
-MAIL_DRIVER=smtp
 
-MAIL_HOST=localhost
+If you don't know what the app key is, run
 
-MAIL_PORT=1025
+php artisan key:generate
 
-MAIL_USERNAME=null
+Now update the .env file with the new key
+nano /vagrant/.env
 
-MAIL_PASSWORD=null
-
-MAIL_ENCRYPTION=null
-
-DB_HOST=localhost
-
-DB_DATABASE=yogaground
-
-DB_USERNAME=testing_yoga
-
-DB_PASSWORD=yoga$pass
+Make sure that /vagrant/storage/ is writable
 
 Then check the unit tests are running OK
 

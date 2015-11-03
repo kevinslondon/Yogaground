@@ -58,6 +58,8 @@
 
             <h1>Error</h1>
             There's an error on this page.
+
+            <!-- {{$error_trace}} -->
         </article>
 
         <aside id="right_bar">
