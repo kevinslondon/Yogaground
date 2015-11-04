@@ -35,6 +35,16 @@ class Student extends Model
         return $this->belongsToMany('App\Workshop','mysite_class_attedance','uid','wid');
     }
 
+
+    public function isStudent($name, $email)
+    {
+        return $this
+            ->where('email', $email)
+            ->where('name', $name)
+            ->count();
+    }
+
+
     /**
      * @param $email
      * @return mixed

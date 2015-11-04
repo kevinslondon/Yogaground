@@ -34,12 +34,19 @@ class WorkshopListener
         $request = $event->getRequest()->all();
         $user = new Student();
         $workshop = $event->getWorkshop();
-        $user->fill($request);
-        $user->status = 'C';
-        $user->profile = $this->getProfile($request);
-        $user->save();
+        if(!$user->isStudent($event->getRequest()->get('name'),$event->getRequest()->get('email'))){
+            $user->fill($request);
+            $user->status = 'C';
+            $user->profile = $this->getProfile($request);
+            $user->save();
+        }else {
+            $user = $user->getByEmailAndName($event->getRequest()->get('name'),$event->getRequest()->get('email'));
+        }
 
-        $user->workshops()->attach($workshop->id, ['sign_date'=>date('Y-m-d H:i:s')]);
+
+        if(!$user->isRegistered($user->name,$user->email, $workshop->id)){
+            $user->workshops()->attach($workshop->id, ['sign_date'=>date('Y-m-d H:i:s')]);
+        }
 
         $name = $event->getRequest()->get('name');
         $email = $event->getRequest()->get('email');
