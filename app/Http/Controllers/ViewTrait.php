@@ -2,7 +2,6 @@
 /**
  * User: Kevin Saunders
  * Date: 14/07/2015
- * Time: 16:51
  */
 
 namespace app\Http\Controllers;

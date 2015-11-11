@@ -4,7 +4,7 @@ namespace App\Listeners;
 
 //use app\EmailsReceived;
 use App\Events\ContactEvent;
-use App\Student;
+use App\Models\Student;
 use Illuminate\Contracts\Mail\Mailer;
 use App\SmsTrait;
 use Illuminate\Support\Facades\Config;

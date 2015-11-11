@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `mysite_workshop` (
 --
 
 INSERT INTO `mysite_workshop` (`id`, `default_workshop`, `name`, `workshop_date`, `deposit`, `fullfee`, `paypal_deposit`, `paypal_fullfee`, `paypal_email_deposit`, `paypal_email_fullfee`, `workshop_limit`) VALUES
-  (1, 'yes', 'Wednesday 18th May 2025 at 7.30pm for 6 lessons', '2011-05-18 19:30:00', 10, 40, '', '', '','', 5);
+  (1, 'yes', 'Wednesday 18th May 2025 at 7.30pm for 6 lessons', '2025-05-18 19:30:00', 10, 40, '', '', '','', 5);
 
 
 CREATE TABLE IF NOT EXISTS `mysite_class_attedance` (
@@ -180,9 +180,9 @@ CREATE TABLE IF NOT EXISTS `yogablog_newsletter` (
 -- Dumping data for table `yogablog_newsletter`
 --
 
-INSERT INTO `yogablog_newsletter` (`id`, `name`, `email`, `address`, `phone`, `token`, `status`, `group`, `profile`, `list`, `created`, `surname`, `sex`, `feed`, `feed_time`, `country`, `list_1`, `list_2`, `list_3`, `list_4`, `list_5`, `list_6`, `list_7`, `list_8`, `list_9`, `list_10`, `list_11`, `list_12`, `list_13`, `list_14`, `list_15`, `list_16`, `list_17`, `list_18`, `list_19`, `list_20`, `profile_1`, `profile_2`, `profile_3`, `profile_4`, `profile_5`, `profile_6`, `profile_7`, `profile_8`, `profile_9`, `profile_10`, `profile_11`, `profile_12`, `profile_13`, `profile_14`, `profile_15`, `profile_16`, `profile_17`, `profile_18`, `profile_19`, `profile_20`, `referrer`, `http_referer`, `wp_user_id`, `ip`, `test`, `flow`) VALUES
-  (3, 'Kevin Test', 'kevintest@hotmail.com', 'address', '98098080', '40356caba97f76b', 'C', 0, '', 0, '2011-05-10 13:59:39', '', 'n', 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', 1, 0),
-  (4, 'Tester', 'tester@hotmail.com', '', '+phone', 'a46c438815', 'C', 0, '', 0, '2011-05-09 17:08:49', '', 'n', 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', 0, 0);
+INSERT INTO `yogablog_newsletter` (`name`, `email`, `address`, `phone`, `token`, `status`, `group`, `profile`, `list`, `created`, `surname`, `sex`, `feed`, `feed_time`, `country`, `list_1`, `list_2`, `list_3`, `list_4`, `list_5`, `list_6`, `list_7`, `list_8`, `list_9`, `list_10`, `list_11`, `list_12`, `list_13`, `list_14`, `list_15`, `list_16`, `list_17`, `list_18`, `list_19`, `list_20`, `profile_1`, `profile_2`, `profile_3`, `profile_4`, `profile_5`, `profile_6`, `profile_7`, `profile_8`, `profile_9`, `profile_10`, `profile_11`, `profile_12`, `profile_13`, `profile_14`, `profile_15`, `profile_16`, `profile_17`, `profile_18`, `profile_19`, `profile_20`, `referrer`, `http_referer`, `wp_user_id`, `ip`, `test`, `flow`) VALUES
+  ('Kevin Test', 'kevintest@hotmail.com', 'address', '98098080', '40356caba97f76b', 'C', 0, '', 0, '2011-05-10 13:59:39', '', 'n', 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', 1, 0),
+  ('Tester', 'tester@hotmail.com', '', '+phone', 'a46c438815', 'C', 0, '', 0, '2011-05-09 17:08:49', '', 'n', 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', 0, 0);
 
 
 DROP TABLE IF EXISTS `yogablog_posts`;

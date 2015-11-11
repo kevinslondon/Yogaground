@@ -1,7 +1,8 @@
 <?php
 
-namespace App;
+namespace app\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Workshop extends Model
@@ -18,7 +19,7 @@ class Workshop extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function students(){
-        return $this->belongsToMany('App\Student','mysite_class_attedance','wid','uid');
+        return $this->belongsToMany('App\Models\Student','mysite_class_attedance','wid','uid');
     }
 
     /**
@@ -47,5 +48,14 @@ class Workshop extends Model
     public function isFull()
     {
         return count($this->students) >= $this->workshop_limit;
+    }
+
+    /**
+     * Check to see if the workshop is in the past
+     * @return bool
+     */
+    public function isPassedDate()
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s',$this->workshop_date)->isPast();
     }
 }

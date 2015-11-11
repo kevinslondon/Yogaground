@@ -5,7 +5,7 @@
  * Date: 25/09/15
  */
 
-namespace app;
+namespace app\Models;
 
 
 use Illuminate\Database\Eloquent\Model;

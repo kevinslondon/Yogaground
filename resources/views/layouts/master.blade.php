@@ -2,24 +2,17 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>North London Yoga,N4, Yoga Ground, UK: Kevin Saunders</title>
+    <title>{{env('HTML_TITLE')}}</title>
     <link href="/css/yoga_style.css" rel="stylesheet" media="(orientation: landscape)" type="text/css" />
     <link href="/css/mobile_portrait.css" rel="stylesheet" media="(orientation: portrait)" type="text/css" />
-    <meta name="keywords" content="Yoga,Hatha,North, Meridian,Energy,London,Relaxation,Release,Muscle,Injury Prevention,Joint,Healing" />
-    <meta name="description" content="Hatha yoga influenced by okido yoga, Alexander technique and shiatsu." />
+    <meta name="keywords" content="{{env('HTML_KEYWORDS')}}" />
+    <meta name="description" content="{{env('HTML_DESCRIPTION')}}" />
 
 </head>
 
 <body>
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+@include('layouts.facebook')
 
 <div id="container_centre">
     <section id="container">
@@ -48,21 +41,10 @@
     </section>
     <br clear="left" />
     <footer>
-        Contact me: 07815 797 645&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&copy; Kevin Saunders 2015.&nbsp;&nbsp;
+       {{env('FOOTER_TEXT')}}
     </footer>
 </div>
-<script type="text/javascript">
 
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-37758212-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-</script>
+@include('layouts.google')
 </body>
 </html>

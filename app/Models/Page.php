@@ -4,7 +4,7 @@
  * Date: 30/06/2015
  */
 
-namespace App;
+namespace app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 class Page extends Model {

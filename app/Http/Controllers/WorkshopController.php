@@ -7,10 +7,10 @@ namespace app\Http\Controllers;
 
 use Illuminate\Support\Facades\Event;
 use App\Events\WorkshopEvent;
-use App\Reviews;
-use App\Workshop;
-use App\Student;
-use App\Blog;
+use App\Models\Reviews;
+use App\Models\Workshop;
+use App\Models\Student;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
 
@@ -69,7 +69,7 @@ class WorkshopController  extends Controller
         }
 
         //Check if the workshop is still current
-        if(date('U') > strtotime($page_workshop->workshop_date)){
+        if($page_workshop->isPassedDate()){
             return $this->getView('lessonexpired',['page_workshop'=>$page_workshop]);
         }
 

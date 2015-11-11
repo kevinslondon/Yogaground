@@ -3,7 +3,7 @@
  * Blog model, takes a few items from the wordpress site database
  */
 
-namespace app;
+namespace app\Models;
 
 
 use Illuminate\Database\Eloquent\Model;

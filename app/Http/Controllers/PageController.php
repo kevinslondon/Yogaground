@@ -7,11 +7,11 @@
 namespace App\Http\Controllers;
 
 
-use App\Blog;
+use App\Models\Blog;
 use App\Events\ContactEvent;
-use App\Page;
+use App\Models\Page;
 use Illuminate\Http\Request;
-use App\Reviews;
+use App\Models\Reviews;
 use Illuminate\Support\Facades\Event;
 
 class PageController extends Controller {
@@ -78,6 +78,11 @@ class PageController extends Controller {
         return $this->getView('contact');
     }
 
+    /**
+     * Process the contact request
+     * @param Request $request
+     * @return \Illuminate\View\View
+     */
     public function processContact(Request $request)
     {
         $this->validate($request, [

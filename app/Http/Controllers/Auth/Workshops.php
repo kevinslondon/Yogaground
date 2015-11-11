@@ -7,7 +7,7 @@ namespace app\Http\Controllers\Auth;
 
 
 use App\Http\Controllers\Controller;
-use App\Workshop;
+use App\Models\Workshop;
 use Illuminate\Support\Facades\Auth;
 
 class Workshops extends Controller
