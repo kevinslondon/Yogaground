@@ -1,10 +1,21 @@
 <?php
 namespace app;
 
-
+/**
+ * Class to send an SMS
+ * Trait SmsTrait
+ * @package app
+ */
 trait SmsTrait
 {
 
+    /**
+     * Sends an SMS message
+     * @param $name string
+     * @param $phone string
+     * @param $comments
+     * @return mixed|string
+     */
     public function sms($name, $phone, $comments)
     {
         if ($_ENV['APP_ENV']=='local' || $_ENV['APP_ENV']=='testing') {
