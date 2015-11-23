@@ -14,9 +14,14 @@ use Illuminate\Http\Request;
 use App\Models\Reviews;
 use Illuminate\Support\Facades\Event;
 
-class PageController extends Controller {
+class PageController extends Controller
+{
 
+    /**
+     * View trait has some convenience functions for the view
+     */
     use ViewTrait;
+
     /**
      * @var Page
      */
@@ -52,10 +57,10 @@ class PageController extends Controller {
      * @param $url String
      * @return \Illuminate\View\View
      */
-    public function showPage($url='home')
+    public function showPage($url = 'home')
     {
         $content = $this->page->getPageByUrl($url);
-        return $this->getView('page',['url'=>$url, 'content'=>$content]);
+        return $this->getView('page', ['url' => $url, 'content' => $content]);
     }
 
 
@@ -66,7 +71,7 @@ class PageController extends Controller {
     public function showReviews()
     {
         $reviews = $this->review->all();
-        return $this->getView('reviews',['reviews'=>$reviews]);
+        return $this->getView('reviews', ['reviews' => $reviews]);
     }
 
     /**
@@ -86,7 +91,7 @@ class PageController extends Controller {
     public function processContact(Request $request)
     {
         $this->validate($request, [
-            'name' =>'required',
+            'name' => 'required',
             'email' => 'required|email',
             'comments' => 'required'
         ]);
@@ -95,8 +100,6 @@ class PageController extends Controller {
 
         return $this->getView('contact_done');
     }
-
-
 
 
 }
