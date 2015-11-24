@@ -7,7 +7,7 @@ namespace App\Listeners;
 use App\Events\WorkshopEvent;
 use App\Models\Student;
 use Illuminate\Contracts\Mail\Mailer;
-use App\SmsTrait;
+use App\Helpers\SmsTrait;
 
 
 /**
