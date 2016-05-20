@@ -29,10 +29,10 @@ return [
         'region' => 'us-east-1',
     ],
 
-    'stripe' => [
+    /*'stripe' => [
         'model'  => App\User::class,
         'key' => '',
         'secret' => '',
-    ],
+    ],*/
 
 ];
