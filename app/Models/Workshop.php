@@ -1,9 +1,17 @@
 <?php
+/**
+ * @author Kevin Saunders
+ */
+namespace app\Models;
 
-namespace App;
-
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Workshops
+ * Class Workshop
+ * @package app\Models
+ */
 class Workshop extends Model
 {
     /**
@@ -17,8 +25,9 @@ class Workshop extends Model
      * Get the students for the workshop
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function students(){
-        return $this->belongsToMany('App\Student','mysite_class_attedance','wid','uid');
+    public function students()
+    {
+        return $this->belongsToMany('App\Models\Student', 'mysite_class_attedance', 'wid', 'uid');
     }
 
     /**
@@ -27,7 +36,7 @@ class Workshop extends Model
      */
     public function getAllWorkshops()
     {
-        return $this->orderBy('workshop_date','DESC')
+        return $this->orderBy('workshop_date', 'DESC')
             ->get();
     }
 
@@ -37,7 +46,7 @@ class Workshop extends Model
      */
     public function getWorkshopDate()
     {
-        return date('l jS M Y \a\t H:i',strtotime($this->workshop_date));
+        return date('l jS M Y \a\t H:i', strtotime($this->workshop_date));
     }
 
     /**
@@ -47,5 +56,14 @@ class Workshop extends Model
     public function isFull()
     {
         return count($this->students) >= $this->workshop_limit;
+    }
+
+    /**
+     * Check to see if the workshop is in the past
+     * @return bool
+     */
+    public function isPassedDate()
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $this->workshop_date)->isPast();
     }
 }

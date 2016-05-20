@@ -1,9 +1,16 @@
 <?php
-
-namespace App;
+/**
+ * @author Kevin Saunders
+ */
+namespace app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * User reviews
+ * Class Reviews
+ * @package app\Models
+ */
 class Reviews extends Model
 {
     /**

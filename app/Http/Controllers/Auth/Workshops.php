@@ -1,13 +1,14 @@
 <?php
 /**
-* Admin workshops controller
+ * @author Kevin Saunders
+ * Admin workshops controller
  */
 
 namespace app\Http\Controllers\Auth;
 
 
 use App\Http\Controllers\Controller;
-use App\Workshop;
+use App\Models\Workshop;
 use Illuminate\Support\Facades\Auth;
 
 class Workshops extends Controller
@@ -27,10 +28,14 @@ class Workshops extends Controller
         $this->workshop = $workshop;
     }
 
+    /**
+     * Gets the list of workshops
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function getWorkshops()
     {
         $workshops = $this->workshop->getAllWorkshops();
-        return view('auth.workshops',compact('workshops'));
+        return view('auth.workshops', compact('workshops'));
     }
 
 

@@ -4,10 +4,17 @@
  * Date: 30/06/2015
  */
 
-namespace App;
+namespace app\Models;
 
 use Illuminate\Database\Eloquent\Model;
-class Page extends Model {
+
+/**
+ * Pages
+ * Class Page
+ * @package app\Models
+ */
+class Page extends Model
+{
 
     /**
      * The database table used by the model.

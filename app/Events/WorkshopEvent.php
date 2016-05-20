@@ -1,15 +1,19 @@
 <?php
-
+/**
+ * @author Kevin Saunders
+ */
 namespace App\Events;
 
-use App\Events\Event;
-use App\Student;
-use App\Workshop;
+use App\Models\Workshop;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Http\Request;
 
-
+/**
+ * Workshop event
+ * Class WorkshopEvent
+ * @package App\Events
+ */
 class WorkshopEvent extends Event
 {
     use SerializesModels;
@@ -61,9 +65,6 @@ class WorkshopEvent extends Event
     {
         return $this->workshop;
     }
-
-
-
 
 
 }

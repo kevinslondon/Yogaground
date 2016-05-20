@@ -15,6 +15,12 @@ function error_class($name, $errors)
     return $errors->first($name) ? 'class="red"' : '';
 }
 
+/**
+ * Will return checked if user has already filled in a value
+ * @param $name
+ * @param $value
+ * @return string
+ */
 function ticked($name, $value)
 {
     return Input::old($name) == $value ? 'checked="checked" ' : '';

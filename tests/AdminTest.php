@@ -11,7 +11,7 @@ class AdminTest extends TestCase
         $this->visit('/admin/workshop_admin')
             ->see('Login');
 
-        $user = factory('App\User')->create();
+        $user = factory('App\Models\User')->create();
 
         $this->actingAs($user)
             ->visit('/admin/workshop_admin')

@@ -90,9 +90,9 @@ debconf-set-selections <<< 'mysql-server mysql-server/root_password_again passwo
 apt-get install -y mysql-server mysql-client php5-mysql
 
 # Set up the database
-mysql -uroot -proot < /vagrant/user.sql
+mysql -uroot -proot < /vagrant/sql/user.sql
 # Import the data
-mysql -uroot -proot yogaground < /vagrant/yogaground.sql
+mysql -uroot -proot yogaground < /vagrant/sql/yogaground.sql
 # ---------------------------------------
 #          PHPMyAdmin setup
 # ---------------------------------------

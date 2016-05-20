@@ -23,6 +23,7 @@
 <div class="fb-like-box" data-href="https://www.facebook.com/yogaground.london" data-colorscheme="dark" width="180" data-show-faces="true" data-header="true" data-stream="false" data-show-border="false"></div>
 @endif
 
+
 <p><img src="/images/right_plant_motif.jpg" alt="" width="191" height="59" class="mobile_hide" /></p>
 
 
