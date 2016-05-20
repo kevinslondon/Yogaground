@@ -1,5 +1,5 @@
 <?php
-namespace app;
+namespace App\Helpers;
 
 /**
  * Class to send an SMS

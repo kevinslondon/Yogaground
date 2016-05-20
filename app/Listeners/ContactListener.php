@@ -8,7 +8,7 @@ use App\Events\ContactEvent;
 use App\Models\EmailsReceived;
 use App\Models\Student;
 use Illuminate\Contracts\Mail\Mailer;
-use App\SmsTrait;
+use App\Helpers\SmsTrait;
 use Illuminate\Support\Facades\Config;
 
 /**

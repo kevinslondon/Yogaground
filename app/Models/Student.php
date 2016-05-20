@@ -52,7 +52,7 @@ class Student extends Model
     {
         return self::where('email', $email)
             ->where('name', $name)
-            ->count() > 1;
+            ->count() > 0;
     }
 
 

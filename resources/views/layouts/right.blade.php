@@ -9,7 +9,7 @@
     <strong>Student testimonials</strong><br />
     <em style="font-size:0.8em;">{{$review->testimonial_text}}</em><br />
     <strong>{{$review->person_name}}</strong><br />
-    <a href="testimonials_reviews" style="text-decoration:none">... more </a>
+    <a href="reviews" style="text-decoration:none">... more </a>
 </p>
 @endif
 
