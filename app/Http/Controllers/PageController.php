@@ -68,6 +68,12 @@ class PageController extends Controller {
         $reviews = $this->review->all();
         return $this->getView('reviews',['reviews'=>$reviews]);
     }
+    
+    
+    public function showNewsletter()
+    {
+        return $this->getView('newsletter',['hide_side_bar_mailchimp' => true]);
+    }
 
     /**
      * Contact page

@@ -12,4 +12,9 @@ class Reviews extends Model
      * @var string
      */
     protected $table = 'mysite_testimonials';
+
+    public function getDate()
+    {
+        return date('M Y', strtotime($this->testimonial_date));
+    }
 }

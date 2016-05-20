@@ -19,7 +19,13 @@ trait ViewTrait
         if(!isset($extra_arguments['include_right'])){
             $extra_arguments['include_right'] = true;
         }
-        $page_variables = array_merge(compact('left_image', 'review','blog_menu'), $extra_arguments);
+        $mail_chimp_u = env('MAILCHIMP_U');
+        $mail_chimp_id = env('MAILCHIMP_ID');
+
+        $hide_side_bar_mailchimp = isset($extra_arguments['hide_side_bar_mailchimp']) ? $extra_arguments['hide_side_bar_mailchimp'] : false;
+
+        $page_variables = array_merge(compact('left_image', 'review',
+            'blog_menu','mail_chimp_u','mail_chimp_id','hide_side_bar_mailchimp'), $extra_arguments);
         return view($view_name,$page_variables );
     }
 

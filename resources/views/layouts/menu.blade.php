@@ -4,6 +4,7 @@
 <h2 class="menu_link"><a href="/workshops" title="Workshops at Yoga Ground">Workshops</a></h2>
 <h2 class="menu_link"><a href="/yoga_one_to_one" title="One to one yoga lessons at yoga ground">One to ones</a></h2>
 <h2 class="menu_link"><a href="/contact" title="Contact Yoga Ground">Contact Yoga Ground</a></h2>
+<h2 class="menu_link"><a href="/newsletter" title="Newsletter Signup">Newsletter Signup</a></h2>
 <h2 class="menu_link"><a href="/reviews" title="Testimonials / Reviews">Testimonials</a></h2>
 <h2 class="menu_link"><a href="/blog/" title="Yoga Ground Blog">Blog</a></h2>
 @foreach($blog_menu as $blog)

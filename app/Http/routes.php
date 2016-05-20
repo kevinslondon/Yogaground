@@ -20,7 +20,11 @@ Route::get('/reviews', [
 ]);
 
 Route::get('/contact', [
-    'as' => 'lessons', 'uses' => 'PageController@showContact'
+    'as' => 'contact', 'uses' => 'PageController@showContact'
+]);
+
+Route::get('/newsletter', [
+    'as' => 'newsletter', 'uses' => 'PageController@showNewsletter'
 ]);
 
 Route::post('/contact', [
