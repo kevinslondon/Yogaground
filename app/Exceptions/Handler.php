@@ -3,11 +3,11 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Illuminate\Auth\Access\AuthorizationException;
-use Symfony\Component\HttpKernel\Exception\HttpException;
 use Illuminate\Validation\ValidationException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -28,19 +28,19 @@ class Handler extends ExceptionHandler
      *
      * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
      *
-     * @param  \Exception  $e
+     * @param  \Exception $e
      * @return void
      */
     public function report(Exception $e)
     {
-        return parent::report($e);
+        parent::report($e);
     }
 
     /**
      * Render an exception into an HTTP response.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Exception  $e
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Exception $e
      * @return \Illuminate\Http\Response
      */
     public function render($request, Exception $e)
@@ -52,12 +52,16 @@ class Handler extends ExceptionHandler
 
         if ($this->isHttpException($e)) {
             return $this->renderHttpException($e);
-        } else {
-            // Custom error 500 view on production
-            if (app()->environment() == 'production') {
-                return response()->view('errors.500', ['error_trace'=>$e->getTraceAsString()], 500);
-            }
+        }
+
+        if ($e instanceof ValidationException) {
             return parent::render($request, $e);
         }
+        // Custom error 500 view on production
+        if (app()->environment() == 'production') {
+            return response()->view('errors.500', ['error_trace' => $e->getTraceAsString()], 500);
+        }
+        return parent::render($request, $e);
+
     }
 }
