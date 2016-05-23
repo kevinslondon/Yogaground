@@ -145,6 +145,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        //Mail chimp integration
+        Skovmand\Mailchimp\MailchimpServiceProvider::class,
+
     ],
 
     /*

@@ -10,6 +10,7 @@ use App\Models\Student;
 use Illuminate\Contracts\Mail\Mailer;
 use App\Helpers\SmsTrait;
 use Illuminate\Support\Facades\Config;
+use Mailchimp;
 
 /**
  * Contact Listener
@@ -24,10 +25,25 @@ class ContactListener
      */
     private $mailer;
 
-    public function __construct(Mailer $mailer)
+    /**
+     * @var Mailchimp
+     */
+    private $mailchimp;
+
+    private $firstname;
+    private $lastname;
+
+    /**
+     * ContactListener constructor.
+     * @param Mailer $mailer
+     * @param Mailchimp $mailchimp
+     */
+    public function __construct(Mailer $mailer, Mailchimp $mailchimp)
     {
         $this->mailer = $mailer;
+        $this->mailchimp = $mailchimp;
     }
+
 
     /**
      * Handle the event.
@@ -90,6 +106,9 @@ class ContactListener
             return;
         }
 
+        $this->name_split($name);
+        $this->addEmailToList($email,$name);
+
         if(Student::isStudent($name,$email)){
             return;
         }
@@ -97,6 +116,32 @@ class ContactListener
         $newsletter_class = Student::create($event->getRequest()->all());
         $newsletter_class->status = 'C';
         $newsletter_class->save();
+
+    }
+
+    /**
+     * Access the mailchimp lists API
+     * for more info check "https://apidocs.mailchimp.com/api/2.0/lists/subscribe.php"
+     */
+    private function addEmailToList($email,$name)
+    {
+        $list_id = env('MAILCHIMP_ID');
+        try {
+            $this->mailchimp
+                ->lists
+                ->subscribe(
+                    $list_id,
+                    ['email' => $email],
+                    ['FNAME' =>$this->firstname, 'LNAME'=>$this->lastname]
+                );
+        } catch (\Mailchimp_List_AlreadySubscribed $e) {
+            echo $e->getMessage();
+            echo $e->getTraceAsString();
+        } catch (\Mailchimp_Error $e) {
+            echo $e->getMessage();
+            echo $e->getTraceAsString();
+
+        }
     }
 
     /**
@@ -109,6 +154,19 @@ class ContactListener
         $email_received->edate = date('Y-m-d H:i:s');
         $email_received->sms_sent = true;
         $email_received->save();
+    }
+
+    private function name_split($name)
+    {
+        $name_array = preg_split('/\s+/', $name);
+        if(count($name_array) < 2){
+            $this->firstname = $name;
+            $this->lastname = '';
+            return;
+        }
+
+        $this->firstname = $name_array[0];
+        $this->lastname = implode(' ', array_slice($name_array, 1));
     }
 
 
