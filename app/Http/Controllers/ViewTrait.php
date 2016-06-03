@@ -4,7 +4,7 @@
  * Date: 14/07/2015
  */
 
-namespace app\Http\Controllers;
+namespace App\Http\Controllers;
 
 /**
  * Convenience functions for the controllers

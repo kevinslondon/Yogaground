@@ -4,7 +4,7 @@
  * Workshop controller for applying and handling workshops
  */
 
-namespace app\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Event;
 use App\Events\WorkshopEvent;
@@ -18,7 +18,10 @@ use Illuminate\Http\Request;
 class WorkshopController extends Controller
 {
 
-    //use ViewTrait;
+    /**
+     * View trait has some convenience functions for the view
+     */
+    use ViewTrait;
     /**
      * @var Workshop
      */
@@ -129,7 +132,7 @@ class WorkshopController extends Controller
      * @param array $extra_arguments
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    private function getView($view_name, $extra_arguments = [])
+    private function getView2($view_name, $extra_arguments = [])
     {
         $left_image = $this->getLeftGutterImage();
         $review = $this->getReview();
