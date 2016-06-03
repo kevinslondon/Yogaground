@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>{{env('HTML_TITLE')}}</title>
+    <title>{{$title}}</title>
     <link href="/css/yoga_style.css" rel="stylesheet" media="(orientation: landscape)" type="text/css" />
     <link href="/css/mobile_portrait.css" rel="stylesheet" media="(orientation: portrait)" type="text/css" />
     <meta name="keywords" content="{{env('HTML_KEYWORDS')}}" />

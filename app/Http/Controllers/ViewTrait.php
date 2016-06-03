@@ -31,10 +31,12 @@ trait ViewTrait
 
         $mail_chimp_u = env('MAILCHIMP_U');
         $mail_chimp_id = env('MAILCHIMP_ID');
+        
+        $title = $this->title;
 
         $hide_side_bar_mailchimp = isset($extra_arguments['hide_side_bar_mailchimp']) ? $extra_arguments['hide_side_bar_mailchimp'] : false;
 
-        $page_variables = array_merge(compact('left_image', 'review',
+        $page_variables = array_merge(compact('left_image', 'review','title',
             'blog_menu','mail_chimp_u','mail_chimp_id','hide_side_bar_mailchimp'), $extra_arguments);
         return view($view_name,$page_variables );
         

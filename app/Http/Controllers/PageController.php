@@ -37,6 +37,11 @@ class PageController extends Controller
      */
     private $blog;
 
+    /**
+     * @var string page html title
+     */
+    protected $title;
+
 
     /**
      * PageController constructor.
@@ -60,6 +65,7 @@ class PageController extends Controller
     public function showPage($url = 'home')
     {
         $content = $this->page->getPageByUrl($url);
+        $this->title = $content->header;
         return $this->getView('page', ['url' => $url, 'content' => $content]);
     }
 
@@ -71,12 +77,14 @@ class PageController extends Controller
     public function showReviews()
     {
         $reviews = $this->review->all();
+        $this->title = 'Yogaground Reviews and Testimonials';
         return $this->getView('reviews', ['reviews' => $reviews]);
     }
     
     
     public function showNewsletter()
     {
+        $this->title = 'Yogaground Newsletter, Tips, Tutorials Signup';
         return $this->getView('newsletter',['hide_side_bar_mailchimp' => true]);
     }
 
@@ -86,6 +94,7 @@ class PageController extends Controller
      */
     public function showContact()
     {
+        $this->title = 'Yogaground Contact';
         return $this->getView('contact');
     }
 
@@ -104,6 +113,7 @@ class PageController extends Controller
 
         Event::fire(new ContactEvent($request));
 
+        $this->title = 'Yogaground Contact form complete';
         return $this->getView('contact_done');
     }
 

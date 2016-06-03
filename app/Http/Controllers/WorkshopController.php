@@ -79,7 +79,8 @@ class WorkshopController extends Controller
 
         $left_image = $this->getLeftGutterImage();
         $blog_menu = $this->blog->getBlogMenu();
-        return view('lessonform', ['include_right' => $include_right, 'page_workshop' => $page_workshop, 'left_image' => $left_image, 'blog_menu' => $blog_menu]);
+        $this->title = 'Yogaground Apply for '.$page_workshop->name;
+        return $this->getView('lessonform', ['include_right' => $include_right, 'page_workshop' => $page_workshop, 'left_image' => $left_image, 'blog_menu' => $blog_menu]);
     }
 
     /**
@@ -110,6 +111,7 @@ class WorkshopController extends Controller
         $student_class = $this->student->getByEmail($request->get('email'));
         $student = isset($student_class->name) ? $student_class->name : '';
 
+        $this->title = 'Yogaground Apply complete';
         return $this->getView('lessondone', compact('page_workshop', 'student'));
 
     }
@@ -123,37 +125,10 @@ class WorkshopController extends Controller
     {
         $include_right = false;
         $page_workshop = $this->workshop->findOrNew($workshop_id);
+        $this->title = 'Yogaground Payment Page';
         return $this->getView('lessonpay', compact('page_workshop', 'include_right'));
     }
 
 
-    /**
-     * @param $view_name
-     * @param array $extra_arguments
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    private function getView2($view_name, $extra_arguments = [])
-    {
-        $left_image = $this->getLeftGutterImage();
-        $review = $this->getReview();
-        $blog_menu = $this->blog->getBlogMenu();
-        if (!isset($extra_arguments['include_right'])) {
-            $extra_arguments['include_right'] = true;
-        }
-        $page_variables = array_merge(compact('left_image', 'review', 'blog_menu'), $extra_arguments);
-        return view($view_name, $page_variables);
-    }
-
-
-    private function getLeftGutterImage()
-    {
-        return '/images/left/' . rand(1, 5) . '.jpg';
-    }
-
-    private function getReview()
-    {
-        $all = $this->review->all();
-        return $all[rand(1, count($all) - 1)];
-    }
 
 }
