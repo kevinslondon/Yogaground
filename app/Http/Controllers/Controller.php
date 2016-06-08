@@ -16,4 +16,8 @@ abstract class Controller extends BaseController
     use DispatchesJobs, ValidatesRequests;
 
 
+    /**
+     * @var string page html title
+     */
+    protected $title;
 }

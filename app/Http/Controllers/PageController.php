@@ -37,10 +37,6 @@ class PageController extends Controller
      */
     private $blog;
 
-    /**
-     * @var string page html title
-     */
-    protected $title;
 
 
     /**

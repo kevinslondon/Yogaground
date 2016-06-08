@@ -39,7 +39,7 @@ class Student extends Model
      */
     public function workshops()
     {
-        return $this->belongsToMany('App\Workshop', 'mysite_class_attedance', 'uid', 'wid');
+        return $this->belongsToMany('app\Models\Workshop', 'mysite_class_attedance', 'uid', 'wid');
     }
 
     /**

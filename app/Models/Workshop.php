@@ -27,7 +27,7 @@ class Workshop extends Model
      */
     public function students()
     {
-        return $this->belongsToMany('App\Models\Student', 'mysite_class_attedance', 'wid', 'uid');
+        return $this->belongsToMany('app\Models\Student', 'mysite_class_attedance', 'wid', 'uid');
     }
 
     /**

@@ -41,6 +41,8 @@ class WorkshopController extends Controller
      * @var Blog
      */
     protected $blog;
+    
+    
 
     /**
      * WorkshopController constructor.
