@@ -12,7 +12,6 @@
 
 <body>
 
-@include('layouts.facebook')
 
 <div id="container_centre">
     <section id="container">
