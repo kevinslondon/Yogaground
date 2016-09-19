@@ -89,6 +89,9 @@ class Workshop extends Model
 
     public function getOfferExpireDate()
     {
+        if(!$this->offer_expire){
+            return '';
+        }
         return Carbon::createFromFormat('Y-m-d', $this->offer_expire)
             ->format('l jS M Y');
     }
@@ -109,6 +112,9 @@ class Workshop extends Model
 
     public function isOfferPassed()
     {
+        if(!$this->offer_expire){
+            return true;
+        }
         return Carbon::createFromFormat('Y-m-d', $this->offer_expire)->isPast();
     }
 
