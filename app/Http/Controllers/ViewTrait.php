@@ -29,6 +29,8 @@ trait ViewTrait
             $extra_arguments['include_right'] = true;
         }
 
+        $workshops = $this->workshop->getCurrentWorkshops();
+
         $mail_chimp_u = env('MAILCHIMP_U');
         $mail_chimp_id = env('MAILCHIMP_ID');
         
@@ -37,7 +39,7 @@ trait ViewTrait
         $hide_side_bar_mailchimp = isset($extra_arguments['hide_side_bar_mailchimp']) ? $extra_arguments['hide_side_bar_mailchimp'] : false;
 
         $page_variables = array_merge(compact('left_image', 'review','title',
-            'blog_menu','mail_chimp_u','mail_chimp_id','hide_side_bar_mailchimp'), $extra_arguments);
+            'blog_menu','mail_chimp_u','mail_chimp_id','hide_side_bar_mailchimp','workshops'), $extra_arguments);
         return view($view_name,$page_variables );
         
     }

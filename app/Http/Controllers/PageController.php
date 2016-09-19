@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Events\ContactEvent;
 use App\Models\Page;
+use App\Models\Workshop;
 use Illuminate\Http\Request;
 use App\Models\Reviews;
 use Illuminate\Support\Facades\Event;
@@ -37,6 +38,11 @@ class PageController extends Controller
      */
     private $blog;
 
+    /**
+     * @var Workshop
+     */
+    private $workshop;
+
 
 
     /**
@@ -44,12 +50,14 @@ class PageController extends Controller
      * @param Page $page
      * @param Reviews $review
      * @param Blog $blog
+     * @param Workshop $workshop
      */
-    public function __construct(Page $page, Reviews $review, Blog $blog)
+    public function __construct(Page $page, Reviews $review, Blog $blog, Workshop $workshop)
     {
         $this->page = $page;
         $this->review = $review;
         $this->blog = $blog;
+        $this->workshop = $workshop;
     }
 
 

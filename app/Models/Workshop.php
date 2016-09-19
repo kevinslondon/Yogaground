@@ -41,12 +41,56 @@ class Workshop extends Model
     }
 
     /**
+     * All workshops
+     * @return mixed
+     */
+    public function getCurrentWorkshops()
+    {
+        return $this->where('workshop_type', 'workshop')
+            ->where('workshop_date', '>', Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now()))
+            ->orderBy('workshop_date', 'DESC')
+            ->get();
+    }
+
+    /**
      * Gets the workshop date formatted as Thursday 29th Oct 2015 at 19:30
      * @return string
      */
     public function getWorkshopDate()
     {
-        return date('l jS M Y \a\t H:i', strtotime($this->workshop_date));
+        return Carbon::createFromFormat('Y-m-d H:i:s', $this->workshop_date)
+            ->format('l jS M Y \a\t H:i');
+    }
+
+    /**
+     * @return float gets the price based on the offer or full fee
+     */
+    public function getFee()
+    {
+        if($this->offerfee <= 0 || !$this->offer_expire){
+            return $this->fullfee;
+        }
+
+        return $this->isOfferPassed() ? $this->fullfee : $this->offerfee ;
+    }
+
+    /**
+     * Gets the pay pal button based on the offer or full fee
+     * @return string
+     */
+    public function getPayPalButton()
+    {
+        if($this->offerfee <= 0 || !$this->offer_expire){
+            return $this->paypal_fullfee;
+        }
+
+        return $this->isOfferPassed() ? $this->paypal_offer : $this->paypal_fullfee;
+    }
+
+    public function getOfferExpireDate()
+    {
+        return Carbon::createFromFormat('Y-m-d', $this->offer_expire)
+            ->format('l jS M Y');
     }
 
     /**
@@ -56,6 +100,16 @@ class Workshop extends Model
     public function isFull()
     {
         return count($this->students) >= $this->workshop_limit;
+    }
+
+    public function isWorkshop()
+    {
+        return $this->workshop_type == 'workshop';
+    }
+
+    public function isOfferPassed()
+    {
+        return Carbon::createFromFormat('Y-m-d', $this->offer_expire)->isPast();
     }
 
     /**
