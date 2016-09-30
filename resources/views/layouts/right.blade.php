@@ -29,6 +29,7 @@
 
 <p><br />
     <img src="/images/right_collage.jpg" alt="" width="190" height="155" class="image_left right_bar_break" />
+    <img src="/images/donna_farhi_advanced_cert.jpg" alt="" width="190" height="106" class="image_left right_bar_break" />
     <img src="/images/yoga_alliance_200_teacher.jpg" alt="" width="190" height="108" class="image_left right_bar_break" />
     <img src="/images/relax-and-renew-badge.jpg" alt="Relax and restore trainer" width="190" height="190" class="image_left right_bar_break" />
     <img src="/images/registered_exercise_prof.jpg" alt="" width="140" height="140" style="margin-left:25px;" class="image_left right_bar_break" />
