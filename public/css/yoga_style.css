@@ -159,6 +159,10 @@ h2.menu_link_sub a:hover {
     display: block;
 }
 
+blockquote {
+    font-style: italic;
+}
+
 /**
 * Admin classes
 */
