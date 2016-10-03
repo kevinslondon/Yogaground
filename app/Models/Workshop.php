@@ -84,7 +84,7 @@ class Workshop extends Model
             return $this->paypal_fullfee;
         }
 
-        return $this->isOfferPassed() ? $this->paypal_offer : $this->paypal_fullfee;
+        return $this->isOfferPassed() ? $this->paypal_fullfee : $this->paypal_offer;
     }
 
     public function getOfferExpireDate()
