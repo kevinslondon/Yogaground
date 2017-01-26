@@ -12,8 +12,11 @@
 */
 
 Route::get('/{url}','PageController@showPage' )
-    ->where('url', '$|about|lessons|workshops|yoga_one_to_one|okido|alexander_tech');
+    ->where('url', '$|about|lessons|yoga_one_to_one|okido|alexander_tech');
 
+
+Route::get('/workshops', ['as'=>'workshops', 'uses' => 'WorkshopController@showWorkshops']);
+Route::get('/workshop/{workshop}', ['as'=>'workshop', 'uses' => 'WorkshopController@showIndividualWorkshop']);
 
 Route::get('/reviews', [
     'as' => 'lessons', 'uses' => 'PageController@showReviews'

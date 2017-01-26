@@ -59,6 +59,18 @@ class WorkshopController extends Controller
         $this->blog = $blog;
     }
 
+    public function showWorkshops()
+    {
+        $workshops = $this->workshop->getCurrentWorkshops();
+        return $this->getView('workshops',['workshops' => $workshops]);
+    }
+
+    public function showIndividualWorkshop($workshop_id)
+    {
+        $page_workshop = $this->workshop->findOrNew($workshop_id);
+        return $this->getView('workshop',['page_workshop' => $page_workshop]);
+    }
+
 
     /**
      * Apply for lessons/workshops page
