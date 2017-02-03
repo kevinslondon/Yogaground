@@ -1,9 +1,11 @@
 <h2 class="menu_link"><a href="/" title="Yoga Ground Home">Home</a></h2>
 <h2 class="menu_link"><a href="/about" title="About Yoga Ground">About Yoga Ground</a></h2>
+<!--
 <h2 class="menu_link"><a href="/lessons" title="Lessons at Yoga Ground">Lessons</a></h2>
+-->
 <h2 class="menu_link"><a href="/workshops" title="Workshops at Yoga Ground">Workshops</a></h2>
-@foreach($workshops as $workshop)
-    <h2 class="menu_link_sub"><a href="/workshops">{{$workshop->shortname}}</a></h2>
+@foreach($workshops as $menu_workshop)
+    <h2 class="menu_link_sub"><a href="/workshop/{{$menu_workshop->id}}">{{$menu_workshop->shortname}}</a></h2>
 @endforeach
 <h2 class="menu_link"><a href="/yoga_one_to_one" title="One to one yoga lessons at yoga ground">One to ones</a></h2>
 <h2 class="menu_link"><a href="/contact" title="Contact Yoga Ground">Contact Yoga Ground</a></h2>
