@@ -48,7 +48,7 @@ class Workshop extends Model
     {
         return $this->where('workshop_type', 'workshop')
             ->where('workshop_date', '>', Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now()))
-            ->orderBy('workshop_date', 'DESC')
+            ->orderBy('workshop_date', 'ASC')
             ->get();
     }
 
