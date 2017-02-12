@@ -17,13 +17,18 @@
     <section id="container">
         <header>
             <a href="/index.php"><img src="/images/headers.jpg" id="header_image" alt="" width="1000" height="183" border="0" /></a>
+            @if(!$hide_side_bar_mailchimp)
+                @include('layouts.mailslim')
+            @endif
         </header>
 
         <aside id="side_bar"><img src="/images/left_spacer.jpg" alt="" width="75" height="383" /></aside>
         <nav id="left_bar" >
             @include('layouts.menu')
+            <!-- reduce clutter on left hand menu
             <p id="menu_bottom_separator"><img src="/images/greenline.jpg" alt="" width="194" height="17" /></p>
             <p id="menu_bottom_image"><img src="{{$left_image}}" alt="" width="194" height="323" /></p>
+            -->
         </nav>
 
         <article id="content">

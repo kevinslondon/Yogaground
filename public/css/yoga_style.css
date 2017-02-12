@@ -96,39 +96,43 @@ fieldset.apply_form {
 
 h2.menu_link {
     font-size: 1em;
-    color: #214E85;
     margin-left: 20px;
 }
 
 h2.menu_link a {
     text-decoration: none;
     font-size: 1.0em;
+    color: #111;
 }
 
 h2.menu_link a:hover {
     text-decoration: none;
+    color: #111;
 }
 
-h2.menu_link a:hover {
+h2.menu_link a:active {
     text-decoration: none;
+    color: #111;
 }
 
 h2.workshop_link a {
     text-decoration: none;
     font-size: 0.8em;
+    color: #406E00;
 }
 
 h2.workshop_link a:hover {
     text-decoration: none;
+    color: #111;
 }
 
-h2.workshop_link a:hover {
+h2.workshop_link a:active {
     text-decoration: none;
+    color: #111;
 }
 
 h2.menu_link_sub {
     font-size: 0.7em;
-    color: #214E85;
     margin-left: 30px;
     margin-right: 15px;
     line-height: 0.8em;
@@ -137,14 +141,17 @@ h2.menu_link_sub {
 
 h2.menu_link_sub a {
     text-decoration: none;
+    color: #214E85;
 }
 
 h2.menu_link_sub a:hover {
     text-decoration: none;
+    color: #214E85;
 }
 
-h2.menu_link_sub a:hover {
+h2.menu_link_sub a:active {
     text-decoration: none;
+    color: #214E85;
 }
 
 #container_centre {
