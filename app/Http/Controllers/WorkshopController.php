@@ -62,12 +62,14 @@ class WorkshopController extends Controller
     public function showWorkshops()
     {
         $workshops = $this->workshop->getCurrentWorkshops();
+        $this->title = 'Yoga and Alexander Workshops in London, N4, N15, N8, Manor House, Finsbury Park';
         return $this->getView('workshops',['workshops' => $workshops]);
     }
 
     public function showIndividualWorkshop($workshop_id)
     {
         $page_workshop = $this->workshop->findOrNew($workshop_id);
+        $this->title = $page_workshop->name;
         return $this->getView('workshop',['page_workshop' => $page_workshop]);
     }
 

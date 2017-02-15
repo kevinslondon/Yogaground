@@ -4,7 +4,7 @@
 @section('content')
 
 
-    <h1>Upcoming Workshops </h1>
+    <h1>Upcoming Yoga/Alexander Technique Workshops </h1>
 
     @foreach($workshops as $workshop)
         <article style="border-bottom: 1px solid #053d24">

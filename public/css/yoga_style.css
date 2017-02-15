@@ -44,14 +44,14 @@ aside#side_bar {
 footer {
     position: relative;
     width: 849px;
-    top: 10px;
     text-align: right;
-    margin-top: 5px;
+    margin-top: 15px;
     clear: both;
     color: #FFFFFF;
-    background-color: #79994D;
+    background-color: #446B00;
     margin-right: 76px;
     margin-left: 75px;
+    padding: 5px 25px 5px 0px;
 }
 
 #container {
