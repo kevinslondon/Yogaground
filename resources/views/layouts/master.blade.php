@@ -3,8 +3,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>{{$title}}</title>
-    <link href="/css/yoga_style.css" rel="stylesheet" media="(orientation: landscape)" type="text/css" />
-    <link href="/css/mobile_portrait.css" rel="stylesheet" media="(orientation: portrait)" type="text/css" />
+    <link href="/css/yoga_style.css" rel="stylesheet" media="all" type="text/css" />
+    <link href="/css/mobile_portrait.css" rel="stylesheet" media="(orientation: landscape)" type="text/css" />
     <meta name="keywords" content="{{env('HTML_KEYWORDS')}}" />
     <meta name="description" content="{{env('HTML_DESCRIPTION')}}" />
 
@@ -16,7 +16,7 @@
 <div id="container_centre">
 
         <header>
-            <a href="/"><img src="/images/headers.jpg" id="header_image" alt="" width="1000" height="183" border="0" /></a>
+            <a href="/"><img src="/images/headers.jpg" id="header_image" alt="" border="0" /></a>
             @if(!$hide_side_bar_mailchimp)
                 @include('layouts.mailslim')
             @endif

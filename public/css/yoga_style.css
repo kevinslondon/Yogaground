@@ -20,13 +20,7 @@ header a img {
     display: block;
 }
 
-article#content {
-    top: 0;
-    width: 645px;
-    float: left;
-    margin: 0;
-    padding: 0 0 0 20px;
-}
+
 
 article#content p {
     font-size: 1em;
@@ -38,12 +32,7 @@ article#content h1 {
     font-size: 1.5em;
 }
 
-aside#side_bar {
-    float: left;
-    width: 75px;
-    margin: 0px;
-    padding: 0px;
-}
+
 
 footer {
     text-align: right;
@@ -56,21 +45,6 @@ footer {
     padding: 5px 25px 5px 0px;
 }
 
-#container {
-    width: 1000px;
-    left: 0px;
-    float: left;
-    clear: both;
-}
-
-nav {
-    float: left;
-    width: 851px;
-    margin: 0;
-    padding: 0;
-    background-color: #446B00;
-}
-
 nav li
 {
     display: inline;
@@ -78,17 +52,7 @@ nav li
     padding-right: 12px;
 }
 
-aside#right_bar {
-    float: left;
-    width: 176px;
-    margin: 0px;
-    padding: 0px;
-}
 
-aside#side_bar_right {
-    float: right;
-    width: 74px;
-}
 
 fieldset.apply_form {
     width: 620px;
@@ -157,12 +121,6 @@ li.menu_link_sub a:hover {
 li.menu_link_sub a:active {
     text-decoration: none;
     color: #FFF;
-}
-
-#container_centre {
-    margin-right: auto;
-    margin-left: auto;
-    width: 1000px;
 }
 
 .red {

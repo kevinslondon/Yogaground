@@ -137,13 +137,7 @@
         padding: .5em 0;
     }
 
-    #mc_embed_signup {
-        font: 14px Helvetica, Arial, sans-serif;
-        width: 150px;
-        float: left;
-        margin-left: 745px;
-        margin-top:-180px;
-    }
+
 
     /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
