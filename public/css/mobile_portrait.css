@@ -29,6 +29,21 @@ body {
     clear: both;
 }
 
+nav {
+    float: left;
+    width: 851px;
+    margin: 0;
+    padding: 0;
+    background-color: #446B00;
+}
+
+nav li
+{
+    display: inline;
+    list-style-type: none;
+    padding-right: 12px;
+}
+
 article#content {
     top: 0px;
     width: 95%;
