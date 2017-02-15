@@ -17,7 +17,7 @@
 <div id="container_centre">
 
         <header>
-            <a href="/"><img src="/images/headers.jpg" id="header_image" alt="" border="0" /></a>
+            <a href="/"></a>
             @if(!$hide_side_bar_mailchimp)
                 @include('layouts.mailslim')
             @endif

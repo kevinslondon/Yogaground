@@ -4,7 +4,8 @@
     margin-right: auto;
 }
 
-header a img {
+header  {
+    background: url("/images/headers.jpg") no-repeat;
     width:1000px;
     height:183px;
 }

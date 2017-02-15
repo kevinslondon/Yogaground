@@ -44,15 +44,11 @@ aside#side_bar_right {
 }
 
 header {
-    width: 100%;
+    width: 850px;
+    height: 183px;
+    background: url("/images/header_portrait.jpg") no-repeat right top;
+
 }
-
-
-header a img {
-    width: 100%;
-    height: auto;
-}
-
 
 footer {
     position: relative;
