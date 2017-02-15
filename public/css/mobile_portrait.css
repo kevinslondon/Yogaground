@@ -45,7 +45,7 @@ aside#side_bar_right {
 header {
     width: 850px;
     height: 183px;
-    background: url("/images/header_portrait.jpg") no-repeat right top;
+    background: url("/images/header_portrait.jpg") no-repeat center center;
     background-size: cover;
 
 }
