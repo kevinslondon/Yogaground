@@ -26,16 +26,15 @@ aside#side_bar {
     width: 75px;
     margin: 0;
     padding: 0;
-    display:none;
+    display: none;
 }
-
 
 aside#right_bar {
     float: left;
     width: 176px;
     margin: 0;
     padding: 0;
-    display:none;
+    display: none;
 }
 
 aside#side_bar_right {
@@ -47,6 +46,7 @@ header {
     width: 850px;
     height: 183px;
     background: url("/images/header_portrait.jpg") no-repeat right top;
+    background-size: cover;
 
 }
 
@@ -65,7 +65,6 @@ footer {
 #mc_embed_signup {
     display: none;
 }
-
 
 nav#left_bar {
     float: left;
@@ -86,7 +85,6 @@ aside#side_bar_right {
     width: 76px;
     display: none;
 }
-
 
 .mobile_hide {
     display: none;
