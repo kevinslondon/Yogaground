@@ -53,3 +53,14 @@ aside#side_bar_right {
     float: right;
     width: 74px;
 }
+
+footer {
+    text-align: right;
+    margin-top: 15px;
+    clear: both;
+    color: #FFFFFF;
+    background-color: #446B00;
+    margin-right: 76px;
+    margin-left: 75px;
+    padding: 5px 25px 5px 0px;
+}

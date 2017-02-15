@@ -18,7 +18,7 @@ article#content {
     width: 100%;
     float: left;
     margin: 0;
-    padding: 0 0 0 20px;
+    padding: 0 20px 0 20px;
 }
 
 aside#side_bar {
@@ -47,10 +47,6 @@ header {
     width: 100%;
 }
 
-header a {
-    position: relative;
-    overflow: hidden;
-}
 
 header a img {
     width: 100%;
@@ -61,12 +57,12 @@ header a img {
 footer {
     position: relative;
     width: 100%;
-    top: 5px;
     text-align: right;
     margin-top: 5px;
+    margin-bottom: 15px;
     clear: both;
     color: #FFFFFF;
-    background-color: #79994D;
+    background-color: #446B00;
     padding-right: 20px;
 }
 

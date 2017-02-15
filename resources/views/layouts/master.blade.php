@@ -4,7 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>{{$title}}</title>
     <link href="/css/yoga_style.css" rel="stylesheet" media="all" type="text/css" />
-    <link href="/css/mobile_portrait.css" rel="stylesheet" media="(orientation: landscape)" type="text/css" />
+    <link href="/css/mobile_portrait.css" rel="stylesheet" media="(orientation: portrait)" type="text/css" />
+    <link href="/css/landscape_view.css" rel="stylesheet" media="(orientation: landscape)" type="text/css" />
     <meta name="keywords" content="{{env('HTML_KEYWORDS')}}" />
     <meta name="description" content="{{env('HTML_DESCRIPTION')}}" />
 
