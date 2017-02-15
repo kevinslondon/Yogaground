@@ -1,27 +1,31 @@
 body {
     font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 #aboutme {
     position: absolute;
     top: 153px;
-    left: 0px;
+    left: 0;
 }
 
 #lessons {
     position: absolute;
     top: 116px;
-    left: 0px;
+    left: 0;
+}
+
+header a img {
+    display: block;
 }
 
 article#content {
-    top: 0px;
-    width: 465px;
+    top: 0;
+    width: 645px;
     float: left;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0 0 0 20px;
 }
 
 article#content p {
@@ -42,8 +46,6 @@ aside#side_bar {
 }
 
 footer {
-    position: relative;
-    width: 849px;
     text-align: right;
     margin-top: 15px;
     clear: both;
@@ -61,11 +63,19 @@ footer {
     clear: both;
 }
 
-nav#left_bar {
+nav {
     float: left;
-    width: 194px;
-    margin: 0px;
-    padding: 0px;
+    width: 851px;
+    margin: 0;
+    padding: 0;
+    background-color: #446B00;
+}
+
+nav li
+{
+    display: inline;
+    list-style-type: none;
+    padding-right: 12px;
 }
 
 aside#right_bar {
@@ -77,7 +87,7 @@ aside#right_bar {
 
 aside#side_bar_right {
     float: right;
-    width: 76px;
+    width: 74px;
 }
 
 fieldset.apply_form {
@@ -88,31 +98,26 @@ fieldset.apply_form {
     margin-left: 5px;
 }
 
-#menu {
-    float: left;
-    margin-left: 10px;
-    width: 150px;
-}
 
-h2.menu_link {
+li.menu_link {
     font-size: 1em;
-    margin-left: 20px;
+    color: #FFF;
 }
 
-h2.menu_link a {
+li.menu_link a {
     text-decoration: none;
     font-size: 1.0em;
-    color: #111;
+    color: #FFF;
 }
 
-h2.menu_link a:hover {
+li.menu_link a:hover {
     text-decoration: none;
-    color: #111;
+    color: #FFF;
 }
 
-h2.menu_link a:active {
+li.menu_link a:active {
     text-decoration: none;
-    color: #111;
+    color: #FFF;
 }
 
 h2.workshop_link a {
@@ -131,7 +136,7 @@ h2.workshop_link a:active {
     color: #111;
 }
 
-h2.menu_link_sub {
+li.menu_link_sub {
     font-size: 0.7em;
     margin-left: 30px;
     margin-right: 15px;
@@ -139,19 +144,19 @@ h2.menu_link_sub {
 
 }
 
-h2.menu_link_sub a {
+li.menu_link_sub a {
     text-decoration: none;
-    color: #214E85;
+    color: #FFF;
 }
 
-h2.menu_link_sub a:hover {
+li.menu_link_sub a:hover {
     text-decoration: none;
-    color: #214E85;
+    color: #FFF;
 }
 
-h2.menu_link_sub a:active {
+li.menu_link_sub a:active {
     text-decoration: none;
-    color: #214E85;
+    color: #FFF;
 }
 
 #container_centre {
