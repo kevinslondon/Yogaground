@@ -3,8 +3,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>North London Yoga,N4, Yoga Ground, UK: Kevin Saunders</title>
-        <link href="/css/yoga_style.css" rel="stylesheet" media="(orientation: landscape)" type="text/css" />
+        <link href="/css/yoga_style.css" rel="stylesheet" media="all" type="text/css" />
         <link href="/css/mobile_portrait.css" rel="stylesheet" media="(orientation: portrait)" type="text/css" />
+        <link href="/css/landscape_view.css" rel="stylesheet" media="(orientation: landscape)" type="text/css" />
         <meta name="keywords" content="Yoga,Hatha,North, Meridian,Energy,London,Relaxation,Release,Muscle,Injury Prevention,Joint,Healing" />
         <meta name="description" content="Hatha yoga influenced by okido yoga, Alexander technique and shiatsu." />
 
