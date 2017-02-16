@@ -17,7 +17,7 @@
     <div id="container_centre">
         <section id="container">
             <header>
-                <a href="/"><img src="/images/headers.jpg" id="header_image" alt="" width="1000" height="183" border="0" /></a>
+                <a href="/"></a>
             </header>
 
             <aside id="side_bar"><img src="/images/left_spacer.jpg" alt="" width="75" height="383" /></aside>
