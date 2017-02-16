@@ -4,10 +4,10 @@
     margin-right: auto;
 }
 
-header  {
+header {
     background: url("/images/headers.jpg") no-repeat;
-    width:1000px;
-    height:183px;
+    width: 1000px;
+    height: 183px;
 }
 
 nav {
@@ -29,25 +29,23 @@ article#content {
 aside#side_bar {
     float: left;
     width: 75px;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
-
-#mc_embed_signup {
+#mc_embed_signup_top {
     font: 14px Helvetica, Arial, sans-serif;
     width: 150px;
     float: left;
     margin-left: 745px;
-    margin-top:-180px;
+    margin-top: 10px;
 }
-
 
 aside#right_bar {
     float: left;
     width: 176px;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 aside#side_bar_right {
@@ -63,5 +61,5 @@ footer {
     background-color: #446B00;
     margin-right: 76px;
     margin-left: 75px;
-    padding: 5px 25px 5px 0px;
+    padding: 5px 25px 5px 0;
 }

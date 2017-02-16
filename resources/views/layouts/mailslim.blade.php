@@ -1,38 +1,38 @@
 <!-- Begin MailChimp Signup Form -->
 <style type="text/css">
     /* MailChimp Form Embed Code - Slim - 12/15/2015 v10.7 */
-    #mc_embed_signup form {
+    #mc_embed_signup_top form {
         display: block;
         position: relative;
         text-align: left;
         padding: 10px 0 10px 3%
     }
 
-    #mc_embed_signup h2 {
+    #mc_embed_signup_top h2 {
         font-weight: bold;
         padding: 0;
         margin: 15px 0;
         font-size: 1.4em;
     }
 
-    #mc_embed_signup input {
+    #mc_embed_signup_top input {
         border: 1px solid #999;
         -webkit-appearance: none;
     }
 
-    #mc_embed_signup input[type=checkbox] {
+    #mc_embed_signup_top input[type=checkbox] {
         -webkit-appearance: checkbox;
     }
 
-    #mc_embed_signup input[type=radio] {
+    #mc_embed_signup_top input[type=radio] {
         -webkit-appearance: radio;
     }
 
-    #mc_embed_signup input:focus {
+    #mc_embed_signup_top input:focus {
         border-color: #333;
     }
 
-    #mc_embed_signup .button {
+    #mc_embed_signup_top .button {
         clear: both;
         background-color: #aaa;
         border: 0 none;
@@ -54,31 +54,31 @@
         transition: all 0.23s ease-in-out 0s;
     }
 
-    #mc_embed_signup .button:hover {
+    #mc_embed_signup_top .button:hover {
         background-color: #777;
     }
 
-    #mc_embed_signup .small-meta {
+    #mc_embed_signup_top .small-meta {
         font-size: 11px;
     }
 
-    #mc_embed_signup .nowrap {
+    #mc_embed_signup_top .nowrap {
         white-space: nowrap;
     }
 
-    #mc_embed_signup .clear {
+    #mc_embed_signup_top .clear {
         clear: none;
         display: inline;
     }
 
-    #mc_embed_signup label {
+    #mc_embed_signup_top label {
         display: block;
         font-size: 16px;
         padding-bottom: 10px;
         font-weight: bold;
     }
 
-    #mc_embed_signup input.email {
+    #mc_embed_signup_top input.email {
         font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Verdana, sans-serif;
         font-size: 15px;
         display: block;
@@ -92,14 +92,14 @@
         border-radius: 3px;
     }
 
-    #mc_embed_signup input.button {
+    #mc_embed_signup_top input.button {
         display: block;
         width: 35%;
         margin: 0 0 10px 0;
         min-width: 90px;
     }
 
-    #mc_embed_signup div#mce-responses {
+    #mc_embed_signup_top div#mce-responses {
         float: left;
         top: -1.4em;
         padding: 0em .5em 0em .5em;
@@ -109,7 +109,7 @@
         clear: both;
     }
 
-    #mc_embed_signup div.response {
+    #mc_embed_signup_top div.response {
         margin: 1em 0;
         padding: 1em .5em .5em 0;
         font-weight: bold;
@@ -119,16 +119,16 @@
         width: 80%;
     }
 
-    #mc_embed_signup #mce-error-response {
+    #mc_embed_signup_top #mce-error-response {
         display: none;
     }
 
-    #mc_embed_signup #mce-success-response {
+    #mc_embed_signup_top #mce-success-response {
         color: #529214;
         display: none;
     }
 
-    #mc_embed_signup label.error {
+    #mc_embed_signup_top label.error {
         display: block;
         float: none;
         width: auto;
@@ -142,7 +142,7 @@
     /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
-<div id="mc_embed_signup">
+<div id="mc_embed_signup_top">
     <form action="//yogaground.us9.list-manage.com/subscribe/post?u={{$mail_chimp_u}}&amp;id={{$mail_chimp_id}}"
           method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
           target="_blank" novalidate>
