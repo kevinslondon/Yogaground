@@ -9,6 +9,8 @@
     <meta name="keywords" content="{{env('HTML_KEYWORDS')}}" />
     <meta name="description" content="{{env('HTML_DESCRIPTION')}}" />
 
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+
 </head>
 
 <body>
