@@ -12,6 +12,11 @@ nav {
     background-color: #006B4E;
 }
 
+nav li {
+    padding-bottom: 8px;
+    line-height: 1.2em;
+}
+
 article#content {
     top: 0;
     width: 100%;
