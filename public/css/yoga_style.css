@@ -43,7 +43,10 @@ nav li
     padding-right: 12px;
 }
 
-
+.newsletter_menu {
+    border: solid #FFFFFF 1px;
+    padding: 5px;
+}
 
 fieldset.apply_form {
     width: 90%;

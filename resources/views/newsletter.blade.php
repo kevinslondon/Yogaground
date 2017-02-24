@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <h1>Newsletter signup</h1>
+    <h1>FREE 5-DAY COURSE! 5-days towards pain free shoulders</h1>
 
     <!-- Begin MailChimp Signup Form -->
     <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
@@ -39,5 +39,17 @@
 
     <p>I send out newsletters giving tips, articles and details of classes and workshops.
     Your email is kept completely confidential.</p>
+
+    <p>Our shoulders are very complex areas of expression, strength and emotion. We ask a lot from our shoulders, in some ways, more than any other generation. We ask that our shoulders express our strength through ability to hold, to lift, to pull in daily physical activities and structured exercise.</p>
+
+    <p>At the same time, we want to spend many hours on activities which require fine co-ordination – playing an instrument, using a tablet, a laptop or smartphone. Then as a society, we are expecting ever greater awareness and sensitivity in our communication.</p>
+
+    <p><strong>Our shoulders express our moods, our strengths and our connection to people, to things.</strong></p>
+
+    <p>No wonder that shoulder, arm and wrist complications are now common.</p>
+
+    <p>I work on shoulders, both my own and other people’s day in and day out. The more I discover about this amazing area of our body, the more respect I have for the processes which allow us to keep these important areas free and unblocked.</p>
+
+    <p>So, whether you just want to relax your shoulders more, or you want to do chataranga in your yoga practice, play a musical instrument better or work at a computer, this 5-day challenge is for you!</p>
 
 @endsection

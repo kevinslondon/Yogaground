@@ -4,7 +4,7 @@
     <!--
     <li class="menu_link"><a href="/lessons" title="Lessons at Yoga Ground">Lessons</a></li>
     -->
-    <li class="menu_link"><a href="/workshops" title="Yoga Workshops at Yoga Ground">Yoga Workshops</a></li>
+    <li class="menu_link"><a href="/workshops" title="Yoga Workshops at Yoga Ground">Workshops</a></li>
     {{--<li>
         <ul>
 
@@ -16,11 +16,10 @@
             @endforeach
         </ul>
     </li>--}}
-    <li class="menu_link"><a href="/yoga_one_to_one" title="One to one yoga lessons at yoga ground">One to ones</a></li>
+    <li class="menu_link"><a href="/yoga_one_to_one" title="One to one yoga lessons at yoga ground">Lessons</a></li>
     <li class="menu_link"><a href="/contact" title="Contact Yoga Ground">Contact</a></li>
-    <li class="menu_link"><a href="/newsletter"
-                             title="Newsletter Signup for Tips on Yoga and Alexander Technique in your yoga practice">Newsletter
-            Signup</a></li>
+    <li class="menu_link newsletter_menu"><a href="/newsletter"
+                             title="Newsletter Signup for Tips on Yoga and Alexander Technique in your yoga practice">FREE COURSE! Pain free shoulders</a></li>
     <li class="menu_link"><a href="/reviews"
                              title="Testimonials / Reviews of Yoga and Alexander Technique">Testimonials</a></li>
 

@@ -8,6 +8,8 @@
         padding: 10px 0 10px 3%
     }
 
+
+
     #mc_embed_signup_top h2 {
         font-weight: bold;
         padding: 0;
@@ -75,7 +77,7 @@
         display: block;
         font-size: 16px;
         padding-bottom: 10px;
-        font-weight: bold;
+        color: #FFF;
     }
 
     #mc_embed_signup_top input.email {
@@ -147,7 +149,7 @@
           method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
           target="_blank" novalidate>
         <div id="mc_embed_signup_scroll">
-            <label for="mce-EMAIL">Get News, Articles & Tips
+            <label for="mce-EMAIL">FREE COURSE! pain fee shoulders
                 <signup></signup>
             </label>
             <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
