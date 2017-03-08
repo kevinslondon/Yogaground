@@ -40,6 +40,7 @@
     <p>I send out newsletters giving tips, articles and details of classes and workshops.
     Your email is kept completely confidential.</p>
 
+    <h2>About the 5-part course on your shoulders</h2>
     <p>Our shoulders are very complex areas of expression, strength and emotion. We ask a lot from our shoulders, in some ways, more than any other generation. We ask that our shoulders express our strength through ability to hold, to lift, to pull in daily physical activities and structured exercise.</p>
 
     <p>At the same time, we want to spend many hours on activities which require fine co-ordination – playing an instrument, using a tablet, a laptop or smartphone. Then as a society, we are expecting ever greater awareness and sensitivity in our communication.</p>
