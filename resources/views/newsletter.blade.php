@@ -7,7 +7,6 @@
     <!-- Begin MailChimp Signup Form -->
     <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
     <div id="mc_embed_signup">
-
         <form action="//yogaground.us9.list-manage.com/subscribe/post?u={{$mail_chimp_u}}&amp;id={{$mail_chimp_id}}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
             <div id="mc_embed_signup_scroll">
 
@@ -34,7 +33,8 @@
             </div>
         </form>
     </div>
-    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+    <script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
     <!--End mc_embed_signup-->
 
     <p>I send out newsletters giving tips, articles and details of classes and workshops.
@@ -51,6 +51,6 @@
 
     <p>I work on shoulders, both my own and other people’s day in and day out. The more I discover about this amazing area of our body, the more respect I have for the processes which allow us to keep these important areas free and unblocked.</p>
 
-    <p>So, whether you just want to relax your shoulders more, or you want to do chataranga in your yoga practice, play a musical instrument better or work at a computer, this 5-day challenge is for you!</p>
+    <p>So, whether you just want to relax your shoulders more, or you want to do chataranga in your yoga practice, play a musical instrument better or work at a computer, this 5-day course is for you!</p>
 
 @endsection
