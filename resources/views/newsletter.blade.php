@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <h1>FREE 5-DAY COURSE! 5-days towards pain free shoulders</h1>
+    <h1>FREE 5-DAY E-COURSE! 5-days towards pain free shoulders</h1>
 
     <!-- Begin MailChimp Signup Form -->
     <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
