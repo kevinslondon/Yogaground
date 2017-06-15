@@ -53,4 +53,6 @@
 
     <p>So, whether you just want to relax your shoulders more, or you want to do chataranga in your yoga practice, play a musical instrument better or work at a computer, this 5-day course is for you!</p>
 
+    <p>When you sign up, it is sent out as a series of emails over the course of 2 weeks</p>
+
 @endsection
