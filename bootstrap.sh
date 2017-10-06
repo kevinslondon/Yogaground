@@ -6,9 +6,9 @@
 
 # Adding multiverse sources.
 cat > /etc/apt/sources.list.d/multiverse.list << EOF
-deb http://archive.ubuntu.com/ubuntu trusty multiverse
-deb http://archive.ubuntu.com/ubuntu trusty-updates multiverse
-deb http://security.ubuntu.com/ubuntu trusty-security multiverse
+deb http://archive.ubuntu.com/ubuntu xenial multiverse
+deb http://archive.ubuntu.com/ubuntu xenial-updates multiverse
+deb http://security.ubuntu.com/ubuntu xenial-security multiverse
 EOF
 
 
@@ -27,7 +27,7 @@ rm -rf /var/www
 ln -fs /vagrant /var/www
 
 # Add ServerName to httpd.conf
-echo "ServerName localhost" > /etc/apache2/httpd.conf
+sudo echo "ServerName localhost" > /etc/apache2/httpd.conf
 # Setup hosts file
 VHOST=$(cat <<EOF
 <VirtualHost *:80>
@@ -39,7 +39,7 @@ VHOST=$(cat <<EOF
 </VirtualHost>
 EOF
 )
-echo "${VHOST}" > /etc/apache2/sites-enabled/000-default.conf
+sudo echo "${VHOST}" > /etc/apache2/sites-enabled/000-default.conf
 
 # Loading needed modules to make apache work
 a2enmod actions fastcgi rewrite
@@ -50,15 +50,15 @@ service apache2 reload
 # ---------------------------------------
 
 # Installing packages
-apt-get install -y php5 php5-cli php5-fpm curl php5-curl php5-mcrypt php5-xdebug
+apt-get install -y php7.0 php7.0-cli php7.0-fpm curl php7.0-curl php7.0-mcrypt php7.0-xdebug
 
 # Creating the configurations inside Apache
-cat > /etc/apache2/conf-available/php5-fpm.conf << EOF
+cat > /etc/apache2/conf-available/php7.0-fpm.conf << EOF
 <IfModule mod_fastcgi.c>
-    AddHandler php5-fcgi .php
-    Action php5-fcgi /php5-fcgi
-    Alias /php5-fcgi /usr/lib/cgi-bin/php5-fcgi
-    FastCgiExternalServer /usr/lib/cgi-bin/php5-fcgi -socket /var/run/php5-fpm.sock -pass-header Authorization
+    AddHandler php7-fcgi .php
+    Action php7.0-fcgi /php7.0-fcgi
+    Alias /php7.0-fcgi /usr/lib/cgi-bin/php7.0-fcgi
+    FastCgiExternalServer /usr/lib/cgi-bin/php7.0-fcgi -socket /var/run/php7.0-fpm.sock -pass-header Authorization
 
     # NOTE: using '/usr/lib/cgi-bin/php5-cgi' here does not work,
     #   it doesn't exist in the filesystem!
@@ -70,10 +70,10 @@ cat > /etc/apache2/conf-available/php5-fpm.conf << EOF
 EOF
 
 # Enabling php modules
-php5enmod mcrypt
+php7enmod mcrypt
 
 # Triggering changes in apache
-a2enconf php5-fpm
+a2enconf php7.0-fpm
 service apache2 reload
 
 
@@ -87,7 +87,7 @@ debconf-set-selections <<< 'mysql-server mysql-server/root_password password roo
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
 
 # Installing packages
-apt-get install -y mysql-server mysql-client php5-mysql
+apt-get install -y mysql-server mysql-client php7.0-mysql
 
 # Set up the database
 mysql -uroot -proot < /vagrant/sql/user.sql
@@ -98,20 +98,20 @@ mysql -uroot -proot yogaground < /vagrant/sql/yogaground.sql
 # ---------------------------------------
 
 # Default PHPMyAdmin Settings
-debconf-set-selections <<< 'phpmyadmin phpmyadmin/dbconfig-install boolean true'
-debconf-set-selections <<< 'phpmyadmin phpmyadmin/app-password-confirm password root'
-debconf-set-selections <<< 'phpmyadmin phpmyadmin/mysql/admin-pass password root'
-debconf-set-selections <<< 'phpmyadmin phpmyadmin/mysql/app-pass password root'
-debconf-set-selections <<< 'phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2'
+sudo debconf-set-selections <<< 'phpmyadmin phpmyadmin/dbconfig-install boolean true'
+sudo debconf-set-selections <<< 'phpmyadmin phpmyadmin/app-password-confirm password root'
+sudo debconf-set-selections <<< 'phpmyadmin phpmyadmin/mysql/admin-pass password root'
+sudo debconf-set-selections <<< 'phpmyadmin phpmyadmin/mysql/app-pass password root'
+sudo debconf-set-selections <<< 'phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2'
 
 # Install PHPMyAdmin
-apt-get install -y phpmyadmin
+sudo apt-get install -y phpmyadmin
 
 # Make Composer available globally
-ln -s /etc/phpmyadmin/apache.conf /etc/apache2/sites-enabled/phpmyadmin.conf
+sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/sites-enabled/phpmyadmin.conf
 
 # Restarting apache to make changes
-service apache2 restart
+sudo service apache2 restart
 
 
 
@@ -120,33 +120,33 @@ service apache2 restart
 # ---------------------------------------
 
 # php unit
-wget https://phar.phpunit.de/phpunit.phar
-chmod +x phpunit.phar
-sudo mv phpunit.phar /usr/local/bin/phpunit
+sudo wget https://phar.phpunit.de/phpunit.phar
+sudo chmod +x phpunit.phar
+sudo sudo mv phpunit.phar /usr/local/bin/phpunit
 
 # Installing nodejs and npm
-apt-get install -y nodejs
+sudo apt-get install -y nodejs
 
 # Installing Bower and Grunt
-npm install -g bower grunt-cli
+sudo npm install -g bower grunt-cli
 
 # Installing GIT
-apt-get install -y git
+sudo apt-get install -y git
 
 # Install Composer
-curl -s https://getcomposer.org/installer | php
+sudo curl -s https://getcomposer.org/installer | php
 
 # Make Composer available globally
-mv composer.phar /usr/local/bin/composer
+sudo mv composer.phar /usr/local/bin/composer
 
-cat > /etc/php5/cli/conf.d/20-xdebug.ini << EOF
+sudo cat > /etc/php5/cli/conf.d/20-xdebug.ini << EOF
 xdebug.max_nesting_level=200
 EOF
 
 
 # Install MailHog
- wget https://github.com/mailhog/MailHog/releases/download/v0.1.7/MailHog_linux_386
- mv MailHog_linux_386 /usr/local/bin/mailhog
+sudo  wget https://github.com/mailhog/MailHog/releases/download/v0.1.7/MailHog_linux_386
+sudo  mv MailHog_linux_386 /usr/local/bin/mailhog
 
  sudo tee /etc/init/mailhog.conf <<EOL
  description "Mailhog"

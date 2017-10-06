@@ -1,12 +1,12 @@
 {
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel/framework 5.2.*"],
+    "keywords": ["framework", "laravel/framework 5.3.*"],
     "license": "MIT",
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.2.*",
+        "laravel/framework": "5.3.*",
         "nesbot/carbon": "~1.14",
         "skovmand/mailchimp-laravel": "1.*"
     },
@@ -15,8 +15,8 @@
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~4.0",
         "phpspec/phpspec": "~2.1",
-        "symfony/dom-crawler": "~3.0",
-        "symfony/css-selector": "~3.0"
+        "symfony/dom-crawler": "~3.1",
+        "symfony/css-selector": "~3.1"
     },
     "autoload": {
         "classmap": [
