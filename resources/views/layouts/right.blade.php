@@ -8,6 +8,10 @@
     <em style="font-size:0.8em;">{{$review->testimonial_text}}</em><br />
     <strong>{{$review->person_name}}</strong><br />
     <a href="reviews" style="text-decoration:none">... more </a>
+
+    <br /><br />
+    <strong>Develop your yoga practice survey</strong>. <a href="http://www.yogaground.com/blog/asanas/develop-your-practice-survey/">Click here for
+        the survey</a>.
 </p>
 @endif
 
