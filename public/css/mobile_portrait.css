@@ -89,3 +89,7 @@ aside#side_bar_right {
 .mobile_hide {
     display: none;
 }
+
+.newsletter_menu {
+    border: none;
+}
