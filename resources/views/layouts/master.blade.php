@@ -45,7 +45,7 @@
 
     <br clear="left" />
     <footer>
-       {{env('FOOTER_TEXT')}}
+       {!! env('FOOTER_TEXT') !!}
     </footer>
 </div>
 
