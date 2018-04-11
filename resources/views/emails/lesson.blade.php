@@ -26,6 +26,9 @@
     <tr>
         <td><p>Dear {{$name}},</p>
             <p>Thanks for submitting your form for {{$workshop->name}}. I look forward to seeing you in class on {{$workshop->getWorkshopDate()}}</p>
+            <p>You might find reading these articles helpful before you come to the class</p>
+            <p><a href="https://www.yogaground.com/blog/asanas/what-poses-will-i-do-in-the-yogaground-classes//">My approach to teaching</a></p>
+            <p><a href="https://www.yogaground.com/blog/asanas/yoga-alexander-technique-and-the-art-of-exploration/">The art of exploration</a></p>
             <p>Kind regards,</p>
             <p>Kevin Saunders<br />
                 07815 797 645<br />
