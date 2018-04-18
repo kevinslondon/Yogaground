@@ -10,7 +10,6 @@ use App\Models\Student;
 use Illuminate\Contracts\Mail\Mailer;
 use App\Helpers\SmsTrait;
 use Illuminate\Support\Facades\Config;
-use Mailchimp;
 
 /**
  * Contact Listener
@@ -20,15 +19,13 @@ use Mailchimp;
 class ContactListener
 {
     use SmsTrait;
+    use MailchimpTrait;
     /**
      * @var Mailer
      */
     private $mailer;
 
-    /**
-     * @var Mailchimp
-     */
-    private $mailchimp;
+
 
     private $firstname;
     private $lastname;
@@ -36,12 +33,10 @@ class ContactListener
     /**
      * ContactListener constructor.
      * @param Mailer $mailer
-     * @param Mailchimp $mailchimp
      */
-    public function __construct(Mailer $mailer, Mailchimp $mailchimp)
+    public function __construct(Mailer $mailer)
     {
         $this->mailer = $mailer;
-        $this->mailchimp = $mailchimp;
     }
 
 
@@ -107,7 +102,7 @@ class ContactListener
         }
 
         $this->name_split($name);
-        $this->addEmailToList($email,$name);
+        $this->addEmailToMailchimpList($email, $this->firstname, $this->lastname);
 
         if(Student::isStudent($name,$email)){
             return;
@@ -119,30 +114,6 @@ class ContactListener
 
     }
 
-    /**
-     * Access the mailchimp lists API
-     * for more info check "https://apidocs.mailchimp.com/api/2.0/lists/subscribe.php"
-     */
-    private function addEmailToList($email,$name)
-    {
-        $list_id = env('MAILCHIMP_ID');
-        try {
-            $this->mailchimp
-                ->lists
-                ->subscribe(
-                    $list_id,
-                    ['email' => $email],
-                    ['FNAME' =>$this->firstname, 'LNAME'=>$this->lastname]
-                );
-        } catch (\Mailchimp_List_AlreadySubscribed $e) {
-            echo $e->getMessage();
-            echo $e->getTraceAsString();
-        } catch (\Mailchimp_Error $e) {
-            echo $e->getMessage();
-            echo $e->getTraceAsString();
-
-        }
-    }
 
     /**
      * Save the received email

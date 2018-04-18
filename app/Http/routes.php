@@ -30,6 +30,10 @@ Route::get('/newsletter', [
     'as' => 'newsletter', 'uses' => 'PageController@showNewsletter'
 ]);
 
+Route::post('/newsletter', [
+    'as' => 'newsletter', 'uses' => 'PageController@processNewsletter'
+]);
+
 Route::post('/contact', [
     'as' => 'lessons', 'uses' => 'PageController@processContact'
 ]);
@@ -50,10 +54,9 @@ Route::get('/pay/{workshop}', [
 Route::get('/admin/workshop_admin',['middleware' => 'auth',
     'uses' => 'Auth\Workshops@getWorkshops']);
 
-Route::controllers([
-    'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController',
-]);
+Route::resource( 'auth','Auth\AuthController');
+Route::resource( 'password','Auth\PasswordController');
+
 
 // Password reset link request routes...
 Route::get('password/email', 'Auth\PasswordController@getEmail');

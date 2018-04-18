@@ -145,9 +145,8 @@
        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
 <div id="mc_embed_signup_top">
-    <form action="//yogaground.us9.list-manage.com/subscribe/post?u={{$mail_chimp_u}}&amp;id={{$mail_chimp_id}}"
-          method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
-          target="_blank" novalidate>
+    <form action="/newsletter"
+          method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate">
         <div id="mc_embed_signup_scroll">
             <label for="mce-EMAIL">FREE E-COURSE! pain free shoulders
                 <signup></signup>
@@ -159,6 +158,7 @@
                                                                                       tabindex="-1" value=""></div>
             <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"
                                       class="button"></div>
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
         </div>
     </form>
 </div>

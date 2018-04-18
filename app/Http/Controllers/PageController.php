@@ -7,6 +7,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Events\NewsletterEvent;
 use App\Models\Blog;
 use App\Events\ContactEvent;
 use App\Models\Page;
@@ -93,6 +94,24 @@ class PageController extends Controller
     }
 
     /**
+     * Process the contact request
+     * @param Request $request
+     * @return \Illuminate\View\View
+     */
+    public function processNewsletter(Request $request)
+    {
+        $this->validate($request, [
+            'EMAIL' => 'required|email',
+        ]);
+
+        $email = $request->get('EMAIL');
+        Event::fire(new NewsletterEvent($request));
+
+        //exit();
+        return $this->getView('newsletter_done',['email' => $email]);
+    }
+
+    /**
      * Contact page
      * @return \Illuminate\View\View
      */
@@ -101,6 +120,8 @@ class PageController extends Controller
         $this->title = 'Yogaground Contact';
         return $this->getView('contact');
     }
+
+
 
     /**
      * Process the contact request

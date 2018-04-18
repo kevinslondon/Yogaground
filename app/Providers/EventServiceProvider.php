@@ -20,17 +20,20 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\WorkshopEvent' => [
             'App\Listeners\WorkshopListener',
         ],
+
+        'App\Events\NewsletterEvent' => [
+            'App\Listeners\NewsletterListener',
+        ],
     ];
 
     /**
      * Register any other events for your application.
      *
-     * @param  \Illuminate\Contracts\Events\Dispatcher  $events
      * @return void
      */
-    public function boot(DispatcherContract $events)
+    public function boot()
     {
-        parent::boot($events);
+        parent::boot();
 
         //
     }

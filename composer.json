@@ -6,9 +6,10 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.2.*",
+        "laravel/framework": "5.5.*",
         "nesbot/carbon": "~1.14",
-        "skovmand/mailchimp-laravel": "1.*"
+        "spatie/laravel-newsletter": "4.*"
+
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
