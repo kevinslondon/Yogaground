@@ -8,6 +8,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Event;
 use App\Events\WorkshopEvent;
+use App\Models\WorkshopList;
 use App\Models\Reviews;
 use App\Models\Workshop;
 use App\Models\Student;
@@ -26,6 +27,11 @@ class WorkshopController extends Controller
      * @var Workshop
      */
     private $workshop;
+
+    /**
+     * @var WorkshopList
+     */
+    private $workshop_list;
 
     /**
      * @var Student
@@ -47,16 +53,25 @@ class WorkshopController extends Controller
     /**
      * WorkshopController constructor.
      * @param Workshop $workshop
+     * @param WorkshopList $workshopList
      * @param Student $student
      * @param Reviews $review
      * @param Blog $blog
      */
-    public function __construct(Workshop $workshop, Student $student, Reviews $review, Blog $blog)
+    public function __construct(Workshop $workshop, WorkshopList $workshopList, Student $student, Reviews $review, Blog $blog)
     {
         $this->workshop = $workshop;
+        $this->workshop_list = $workshopList;
         $this->student = $student;
         $this->review = $review;
         $this->blog = $blog;
+    }
+
+    public function showWorkshopList()
+    {
+        $workshops = $this->workshop_list->getWorkshops();
+        $this->title = 'Yoga and Alexander Workshops in London, N4, N15, N8, Manor House, Finsbury Park';
+        return $this->getView('workshoplist',['workshops' => $workshops]);
     }
 
     public function showWorkshops()

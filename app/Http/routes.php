@@ -18,6 +18,8 @@ Route::get('/{url}','PageController@showPage' )
 Route::get('/workshops', ['as'=>'workshops', 'uses' => 'WorkshopController@showWorkshops']);
 Route::get('/workshop/{workshop}', ['as'=>'workshop', 'uses' => 'WorkshopController@showIndividualWorkshop']);
 
+Route::get('/workshoplist', ['as'=>'workshoplist', 'uses' => 'WorkshopController@showWorkshopList']);
+
 Route::get('/reviews', [
     'as' => 'lessons', 'uses' => 'PageController@showReviews'
 ]);
