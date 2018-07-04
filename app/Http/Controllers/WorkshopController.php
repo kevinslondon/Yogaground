@@ -47,8 +47,7 @@ class WorkshopController extends Controller
      * @var Blog
      */
     protected $blog;
-    
-    
+
 
     /**
      * WorkshopController constructor.
@@ -71,21 +70,29 @@ class WorkshopController extends Controller
     {
         $workshops = $this->workshop_list->getWorkshops();
         $this->title = 'Yoga and Alexander Workshops in London, N4, N15, N8, Manor House, Finsbury Park';
-        return $this->getView('workshoplist',['workshops' => $workshops]);
+        return $this->getView('workshoplist', ['workshops' => $workshops]);
     }
 
     public function showWorkshops()
     {
         $workshops = $this->workshop->getCurrentWorkshops();
         $this->title = 'Yoga and Alexander Workshops in London, N4, N15, N8, Manor House, Finsbury Park';
-        return $this->getView('workshops',['workshops' => $workshops]);
+        return $this->getView('workshops', ['workshops' => $workshops]);
     }
+
+    public function showIndividualWorkshopDetails($workshop_list_id)
+    {
+        $page_workshop = $this->workshop_list->findOrNew($workshop_list_id);
+        $this->title = $page_workshop->name;
+        return $this->getView('workshopdetails', ['page_workshop' => $page_workshop]);
+    }
+
 
     public function showIndividualWorkshop($workshop_id)
     {
         $page_workshop = $this->workshop->findOrNew($workshop_id);
         $this->title = $page_workshop->name;
-        return $this->getView('workshop',['page_workshop' => $page_workshop]);
+        return $this->getView('workshop', ['page_workshop' => $page_workshop]);
     }
 
 
@@ -110,7 +117,7 @@ class WorkshopController extends Controller
 
         $left_image = $this->getLeftGutterImage();
         $blog_menu = $this->blog->getBlogMenu();
-        $this->title = 'Yogaground Apply for '.$page_workshop->name;
+        $this->title = 'Yogaground Apply for ' . $page_workshop->name;
         return $this->getView('lessonform', ['include_right' => $include_right, 'page_workshop' => $page_workshop, 'left_image' => $left_image, 'blog_menu' => $blog_menu]);
     }
 
@@ -159,7 +166,6 @@ class WorkshopController extends Controller
         $this->title = 'Yogaground Payment Page';
         return $this->getView('lessonpay', compact('page_workshop', 'include_right'));
     }
-
 
 
 }

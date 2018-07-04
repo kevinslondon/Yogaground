@@ -19,6 +19,7 @@ Route::get('/workshops', ['as'=>'workshops', 'uses' => 'WorkshopController@showW
 Route::get('/workshop/{workshop}', ['as'=>'workshop', 'uses' => 'WorkshopController@showIndividualWorkshop']);
 
 Route::get('/workshoplist', ['as'=>'workshoplist', 'uses' => 'WorkshopController@showWorkshopList']);
+Route::get('/workshopdetails/{workshoplist}', ['as'=>'workshopdetails', 'uses' => 'WorkshopController@showIndividualWorkshopDetails']);
 
 Route::get('/reviews', [
     'as' => 'lessons', 'uses' => 'PageController@showReviews'
