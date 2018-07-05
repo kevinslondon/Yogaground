@@ -54,7 +54,8 @@ class Workshop extends Model
      */
     public function getCurrentWorkshops()
     {
-        return $this->where('workshop_type', 'workshop')
+        return $this->join('mysite_workshop_item', 'mysite_workshop.workshoplist_id', '=', 'mysite_workshop_item.id')
+            ->where('mysite_workshop_item.workshop_type', 'workshop')
             ->where('workshop_date', '>', Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now()))
             ->orderBy('workshop_date', 'ASC')
             ->get();
