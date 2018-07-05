@@ -135,6 +135,10 @@ class Workshop extends Model
         return Carbon::createFromFormat('Y-m-d H:i:s', $this->workshop_date)->isPast();
     }
 
+    public function getImage()
+    {
+        return $this->workshoplisting->image;
+    }
     public function getFullText()
     {
         return $this->workshoplisting->fulltext;
