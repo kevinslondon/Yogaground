@@ -22,6 +22,14 @@ class Workshop extends Model
     protected $table = 'mysite_workshop';
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function workshoplisting()
+    {
+            return $this->belongsTo('app\Models\WorkshopList','workshoplist_id');
+    }
+
+    /**
      * Get the students for the workshop
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
@@ -125,5 +133,15 @@ class Workshop extends Model
     public function isPassedDate()
     {
         return Carbon::createFromFormat('Y-m-d H:i:s', $this->workshop_date)->isPast();
+    }
+
+    public function getFullText()
+    {
+        return $this->workshoplisting->fulltext;
+    }
+
+    public function getDescription()
+    {
+        return $this->workshoplisting->description;
     }
 }

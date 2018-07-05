@@ -12,9 +12,12 @@
         @if($workshop->image)
         <img src="{{$workshop->image}}" alt="" align="left" style="margin-right:15px;" />
         @endif
-            <p>{!!$workshop->description  !!}</p>
+            <p>{!!$workshop->getDescription()  !!}</p>
         </article>
     @endforeach
+
+    <p>You can also see a list of workshops that I can currently offer.
+        If you are interested in taking a workshop or hosting them, please contact me. The <a href="/workshoplist">list is here..</a></p>
 
 
 

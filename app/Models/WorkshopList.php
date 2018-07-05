@@ -25,6 +25,7 @@ class WorkshopList extends Model
     public function getWorkshops()
     {
         return $this->where('workshop_type', 'workshop')
+            ->orderby('sort_order')
             ->get();
     }
 
