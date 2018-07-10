@@ -3,11 +3,8 @@
 
 @section('content')
 
-
-    <h1>Yoga/Alexander Technique Workshops </h1>
-
-    <p>Here is a list of workshop I can offer. Each workshop is half or one day workshop/class.
-        Workshop themes can be combined to make up a weekend workshop.</p>
+    <h1>{{$pagecontent->header}}</h1>
+    {!!$pagecontent->content!!}
 
     @foreach($workshops as $workshop)
         <article style="border-bottom: 1px solid #053d24">
