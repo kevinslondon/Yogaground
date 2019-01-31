@@ -151,6 +151,9 @@ return [
         //Debug bar
         Barryvdh\Debugbar\ServiceProvider::class,
 
+        //Captcha app
+        Mews\Captcha\CaptchaServiceProvider::class,
+
     ],
 
     /*
@@ -200,6 +203,8 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Newsletter' => Spatie\Newsletter\NewsletterFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
+
 
     ],
 

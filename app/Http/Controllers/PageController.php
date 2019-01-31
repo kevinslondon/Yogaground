@@ -133,7 +133,8 @@ class PageController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email',
-            'comments' => 'required'
+            'comments' => 'required',
+            'captcha' => 'required|captcha'
         ]);
 
         Event::fire(new ContactEvent($request));

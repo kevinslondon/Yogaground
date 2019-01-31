@@ -62,6 +62,14 @@
             Your email is kept completely confidential.
 
         </div>
+        <br clear="left"/>
+
+        <div id="innercol">
+            <strong>Verify: {!! captcha_img()!!}</strong></div>
+        <div class="innerblock">
+            <input name="captcha" type="text" id="captcha" />
+        </div>
+        <br clear="left"/>
 
         <div id="innerblock">
             <input type="submit" name="Submit" value="Submit"/>
