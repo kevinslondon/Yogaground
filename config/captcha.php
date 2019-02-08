@@ -7,7 +7,7 @@
 return [
     'default'   => [
         'length'    => 5,
-        'width'     => 120,
+        'width'     => 200,
         'height'    => 36,
         'quality'   => 90,
         'math'      => true, //Enable Math Captcha

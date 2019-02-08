@@ -65,7 +65,8 @@
         <br clear="left"/>
 
         <div id="innercol">
-            <strong>Verify: {!! captcha_img()!!}</strong></div>
+            <strong>Verify: </strong><br />
+                {!! captcha_img('flat')!!}</div>
         <div class="innerblock">
             <input name="captcha" type="text" id="captcha" />
         </div>

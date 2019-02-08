@@ -135,7 +135,11 @@ class PageController extends Controller
             'email' => 'required|email',
             'comments' => 'required',
             'captcha' => 'required|captcha'
-        ]);
+        ],
+            [
+                'captcha.required' => 'Please fill in the verify field',
+                'captcha.captcha' => 'Please make sure that you correctly enter the text from the verify image'
+            ]);
 
         Event::fire(new ContactEvent($request));
 
