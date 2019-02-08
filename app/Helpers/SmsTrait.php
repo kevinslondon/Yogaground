@@ -22,6 +22,11 @@ trait SmsTrait
             //return;
         }
 
+        //Add option to turn off sms sending via the .env file
+        if(isset($_ENV['SMS_SEND']) && $_ENV['SMS_SEND'] !== 'yes'){
+            return '';
+        }
+
         $user = $_ENV['SMS_USER'];
         $pass = $_ENV['SMS_PASS'];
         $sms_phone = $_ENV['SMS_PHONE'];
