@@ -137,8 +137,8 @@ class PageController extends Controller
             'captcha' => 'required|captcha'
         ],
             [
-                'captcha.required' => 'Please fill in the verify field',
-                'captcha.captcha' => 'Please make sure that you correctly enter the text from the verify image (use capital letters only)'
+                'captcha.required' => env('CAPTCHA_MESSAGE'),
+                'captcha.captcha' => env('CAPTCHA_FAIL')
             ]);
 
         Event::fire(new ContactEvent($request));
