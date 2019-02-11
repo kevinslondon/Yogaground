@@ -15,6 +15,7 @@ use App\Models\Workshop;
 use Illuminate\Http\Request;
 use App\Models\Reviews;
 use Illuminate\Support\Facades\Event;
+use JohannEbert\LaravelSpamProtector\SpamProtector;
 
 class PageController extends Controller
 {
@@ -126,7 +127,8 @@ class PageController extends Controller
     /**
      * Process the contact request
      * @param Request $request
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @throws \Exception
      */
     public function processContact(Request $request)
     {
@@ -141,7 +143,17 @@ class PageController extends Controller
                 'captcha.captcha' => env('CAPTCHA_FAIL')
             ]);
 
-        Event::fire(new ContactEvent($request));
+        $spamProtector = new SpamProtector();
+        $email = $request->get('email');
+
+        //Only process this if the email address isn't spammy
+        try {
+            if (!$spamProtector->isSpamEmail($email)) {
+                Event::fire(new ContactEvent($request));
+            }
+        } catch (\Exception $e) {
+            return $this->getView('contact_done');
+        }
 
         $this->title = 'Yogaground Contact form complete';
         return $this->getView('contact_done');

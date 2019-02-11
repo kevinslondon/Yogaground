@@ -43,8 +43,9 @@
         </div>
         <br clear="left"/>
 
-        <div id="innerblock">
-            <strong>Comments</strong></div>
+        <div id="innerblock" {!!error_class(
+        'comments', $errors) !!} >
+            <strong>Comments:</strong></div>
         <br clear="left"/>
 
         <div id="innerblock">
@@ -64,7 +65,8 @@
         </div>
         <br clear="left"/>
 
-        <div id="innercol">
+        <div id="innercol" {!!error_class(
+        'captcha', $errors) !!}>
             <strong>Verify: </strong><br />
                 {!! captcha_img('flat')!!}</div>
         <div class="innerblock">

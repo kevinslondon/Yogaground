@@ -9,7 +9,8 @@
         "laravel/framework": "5.5.*",
         "nesbot/carbon": "~1.14",
         "spatie/laravel-newsletter": "4.*",
-        "mews/captcha": "~2.0"
+        "mews/captcha": "~2.0",
+        "johannebert/laravel-spam-protector": "^2.1"
 
     },
     "require-dev": {
